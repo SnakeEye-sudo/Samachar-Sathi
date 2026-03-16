@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Source+Sans+3:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,53 +6,79 @@
 
 @layer base {
   :root {
-    --background: 40 20% 97%;
-    --foreground: 220 30% 12%;
+    --background: 40 33% 98%;
+    --foreground: 222 47% 11%;
 
-    --card: 40 25% 95%;
-    --card-foreground: 220 30% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
 
-    --popover: 40 20% 97%;
-    --popover-foreground: 220 30% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 220 45% 20%;
-    --primary-foreground: 40 25% 95%;
+    --primary: 222 47% 11%;
+    --primary-foreground: 40 33% 98%;
 
-    --secondary: 40 40% 88%;
-    --secondary-foreground: 220 30% 12%;
+    --secondary: 45 93% 47%;
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 40 15% 92%;
-    --muted-foreground: 220 10% 45%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 42 85% 55%;
-    --accent-foreground: 220 45% 12%;
+    --accent: 45 93% 47%;
+    --accent-foreground: 222 47% 11%;
 
-    --destructive: 0 72% 51%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 40 15% 85%;
-    --input: 40 15% 85%;
-    --ring: 42 85% 55%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222 47% 11%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
 
-    --gold: 42 85% 55%;
-    --gold-light: 42 70% 75%;
-    --gold-dark: 42 90% 40%;
-    --navy: 220 45% 20%;
-    --navy-light: 220 35% 35%;
-    --cream: 40 25% 95%;
-    --cream-dark: 40 20% 90%;
-    --paper: 40 30% 98%;
+    --gold: 45 93% 47%;
+    --gold-light: 45 93% 67%;
+    --gold-dark: 45 93% 27%;
+    
+    --navy: 222 47% 11%;
+    --navy-light: 222 47% 21%;
+    
+    --cream: 40 33% 98%;
+    --cream-dark: 40 33% 90%;
+    
+    --paper: 40 10% 96%;
+  }
 
-    --sidebar-background: 220 45% 15%;
-    --sidebar-foreground: 40 25% 90%;
-    --sidebar-primary: 42 85% 55%;
-    --sidebar-primary-foreground: 220 45% 12%;
-    --sidebar-accent: 220 40% 25%;
-    --sidebar-accent-foreground: 40 25% 90%;
-    --sidebar-border: 220 35% 25%;
-    --sidebar-ring: 42 85% 55%;
+  .dark {
+    --background: 222 47% 7%;
+    --foreground: 40 33% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 40 33% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 40 33% 98%;
+
+    --primary: 40 33% 98%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 45 93% 47%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 222 47% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 45 93% 57%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 40 33% 98%;
+
+    --border: 222 47% 15%;
+    --input: 222 47% 15%;
+    --ring: 45 93% 47%;
+    
+    --paper: 222 47% 5%;
   }
 }
 
@@ -60,60 +86,58 @@
   * {
     @apply border-border;
   }
-
   body {
-    @apply bg-background text-foreground;
-    font-family: 'Source Sans 3', 'Noto Sans Devanagari', sans-serif;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', 'Noto Sans Devanagari', serif;
+    @apply bg-background text-foreground font-body antialiased selection:bg-accent/30;
   }
 }
 
 @layer components {
-  .editorial-divider {
-    @apply w-full h-px bg-border relative;
+  .glass-card {
+    @apply bg-card/60 backdrop-blur-md border border-white/10 shadow-xl;
   }
-  .editorial-divider::after {
-    content: '◆';
-    @apply absolute left-1/2 -translate-x-1/2 -translate-y-1/2 bg-background px-3 text-accent text-sm;
+  
+  .premium-gradient {
+    @apply bg-gradient-to-br from-navy to-navy-light dark:from-navy-light dark:to-navy;
   }
-
+  
   .gold-gradient {
-    background: linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(var(--gold-light)) 50%, hsl(var(--gold)) 100%);
+    @apply bg-gradient-to-br from-gold-light via-gold to-gold-dark text-accent-foreground;
   }
+  
+  .topic-card-hover {
+    @apply transition-all duration-300 hover:shadow-2xl hover:shadow-accent/10 hover:-translate-y-1;
+  }
+  
+  .subtle-ring {
+    @apply ring-1 ring-white/10 dark:ring-white/5;
+  }
+  
+  .animate-entry {
+    @apply animate-fade-in;
+  }
+}
 
-  .navy-gradient {
-    background: linear-gradient(135deg, hsl(var(--navy)) 0%, hsl(var(--navy-light)) 100%);
-  }
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
 
-  .paper-texture {
-    background-color: hsl(var(--paper));
-    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-  }
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
 
-  .topic-card {
-    @apply bg-card rounded-lg border border-border p-6 transition-all duration-300;
-  }
-  .topic-card:hover {
-    @apply shadow-lg border-accent/40;
-    transform: translateY(-2px);
-  }
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/20 rounded-full hover:bg-muted-foreground/30 transition-colors;
+}
 
-  .quiz-option {
-    @apply border border-border rounded-lg p-4 cursor-pointer transition-all duration-200;
-  }
-  .quiz-option:hover {
-    @apply border-accent bg-secondary;
-  }
-  .quiz-option.selected {
-    @apply border-accent bg-accent/10;
-  }
-  .quiz-option.correct {
-    @apply border-green-500 bg-green-50;
-  }
-  .quiz-option.incorrect {
-    @apply border-destructive bg-red-50;
-  }
+.hindi-text {
+  @apply font-display tracking-tight leading-relaxed;
+}
+
+.english-text {
+  @apply font-body leading-relaxed;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: 'Outfit', 'Inter', 'Noto Sans Devanagari', sans-serif;
 }

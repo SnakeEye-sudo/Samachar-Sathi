@@ -18,7 +18,7 @@ const addWatermark = (doc: jsPDF) => {
     doc.setFontSize(40);
     doc.setTextColor(230, 215, 190);
     const text1 = 'Er. Sangam Krishna';
-    const text2 = 'Pragya Daily';
+    const text2 = 'Samachar-Sathi';
     
     // Rotate and place watermarks
     for (let y = 50; y < pageHeight; y += 150) {
@@ -36,7 +36,7 @@ const addWatermark = (doc: jsPDF) => {
     // Footer
     doc.setFontSize(8);
     doc.setTextColor(150, 130, 100);
-    doc.text(`Pragya Daily | Er. Sangam Krishna | Page ${i} of ${pageCount}`, pageWidth / 2, pageHeight - 10, { align: 'center' });
+    doc.text(`Samachar-Sathi | Er. Sangam Krishna | Page ${i} of ${pageCount}`, pageWidth / 2, pageHeight - 10, { align: 'center' });
   }
 };
 
@@ -61,7 +61,7 @@ export const generateDailyPDF = (analysis: DailyAnalysis, lang: Language) => {
   doc.setFontSize(28);
   doc.setTextColor(220, 190, 120);
   doc.setFont('helvetica', 'bold');
-  doc.text('PRAGYA DAILY', pageWidth / 2, 35, { align: 'center' });
+  doc.text('SAMACHAR-SATHI', pageWidth / 2, 35, { align: 'center' });
   
   doc.setFontSize(12);
   doc.setTextColor(200, 200, 210);
@@ -216,8 +216,8 @@ export const generateMagazinePDF = (analyses: DailyAnalysis[], month: string, ye
   doc.setFontSize(36);
   doc.setTextColor(220, 190, 120);
   doc.setFont('helvetica', 'bold');
-  doc.text('PRAGYA', pageWidth / 2, 70, { align: 'center' });
-  doc.text('MONTHLY', pageWidth / 2, 85, { align: 'center' });
+  doc.text('SAMACHAR', pageWidth / 2, 70, { align: 'center' });
+  doc.text('SATHI', pageWidth / 2, 85, { align: 'center' });
 
   // Decorative line
   doc.setDrawColor(220, 190, 120);
@@ -256,7 +256,7 @@ export const generateMagazinePDF = (analyses: DailyAnalysis[], month: string, ye
   doc.text('Er. Sangam Krishna', pageWidth / 2, 240, { align: 'center' });
   doc.setFontSize(9);
   doc.setTextColor(160, 160, 170);
-  doc.text('Pragya Daily', pageWidth / 2, 248, { align: 'center' });
+  doc.text('Samachar-Sathi', pageWidth / 2, 248, { align: 'center' });
 
   // Content pages
   analyses.forEach((analysis) => {
