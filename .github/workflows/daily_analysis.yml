@@ -1,45 +1,50 @@
-name: Daily News Analysis & Deployment
+name: Complete Daily News Analysis for UPSC/BPSC
 
 on:
   schedule:
-    - cron: '0 3 * * *' # 3:00 AM UTC (8:30 AM IST)
-  workflow_dispatch: # Allow manual trigger
+    # Runs every day at 2:30 AM IST (9:00 PM UTC previous day)
+    - cron: '0 21 * * *'
+  workflow_dispatch: # Manual trigger
 
 jobs:
-  generate-and-deploy:
+  comprehensive-news-analysis:
     runs-on: ubuntu-latest
+    
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: '20'
           cache: 'npm'
-          
-      - name: Install dependencies
+      
+      - name: Install Dependencies
         run: npm ci
-        
-      - name: Generate Daily News
+      
+      - name: Generate Comprehensive Daily News Analysis
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: node scripts/generate_daily_news.js
+        run: node scripts/comprehensive_news_scraper.js
         
-      - name: Commit & Push news data
+      - name: Commit News Data
         run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
+          git config --local user.email "action@github.com"
+          git config --local user.name "Samachar-Sathi Bot"
           git add public/news/
-          git commit -m "chore: update daily news for $(date +'%Y-%m-%d')" || echo "No changes to commit"
+          git diff --quiet && git diff --staged --quiet || git commit -m "feat: daily comprehensive news analysis for $(date +'%Y-%m-%d')"
           git push
-          
+      
       - name: Build Application
         run: npm run build
-        
+      
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          force_push: true
-
+          cname: ${{ secrets.CUSTOM_DOMAIN }}
+          force_orphan: true
