@@ -22,7 +22,7 @@ const App = () => (
         <LanguageProvider>
           <Toaster />
           <Sonner />
-          <BrowserRouter>
+          <BrowserRouter basename="/Samachar-Sathi">
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/quiz" element={<QuizPage />} />
