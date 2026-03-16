@@ -189,7 +189,7 @@ const AdminPage = () => {
               </CardHeader>
               <CardContent className="p-8 pt-0 space-y-4">
                 <Textarea
-                  placeholder="{ \"analysis\": { ... } }"
+                  placeholder='{ "analysis": { ... } }'
                   className="min-h-[200px] rounded-2xl font-mono text-xs bg-muted/50 border-none"
                   value={jsonInput}
                   onChange={(e) => setJsonInput(e.target.value)}
