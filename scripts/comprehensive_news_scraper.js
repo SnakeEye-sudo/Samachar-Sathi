@@ -103,7 +103,7 @@ async function generateComprehensiveAnalysis(articles) {
   console.log('\n🤖 Generating COMPREHENSIVE analysis with Gemini 2.0 Flash...');
   
   const model = genAI.getGenerativeModel({ 
-    model: 'gemini-2.0-flash-exp',
+    model: 'gemini-1.5-flash',
     generationConfig: {
       temperature: 0.3,
       topK: 40,
