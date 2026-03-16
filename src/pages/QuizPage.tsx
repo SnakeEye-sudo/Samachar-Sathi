@@ -1,5 +1,6 @@
 import { useLanguage } from '@/context/LanguageContext';
 import { useEffect, useMemo, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { getSampleQuiz } from '@/data/sampleData';
 import { saveQuiz, getQuizByDate } from '@/lib/db';
 import MCQQuizView from '@/components/MCQQuizView';
@@ -9,21 +10,24 @@ import { BrainCircuit, Trophy, Target, Sparkles } from 'lucide-react';
 
 const QuizPage = () => {
   const { lang } = useLanguage();
+  const [searchParams] = useSearchParams();
+  const dateParam = searchParams.get('date');
   const today = new Date().toISOString().split('T')[0];
+  const date = dateParam || today;
 
   const [quiz, setQuiz] = useState<DailyQuiz | null>(null);
 
   useEffect(() => {
     const loadQuiz = async () => {
-      let currentQuiz = await getQuizByDate(today);
-      if (!currentQuiz) {
+      let currentQuiz = await getQuizByDate(date);
+      if (!currentQuiz && date === today) {
         currentQuiz = getSampleQuiz(today);
         await saveQuiz(currentQuiz);
       }
-      setQuiz(currentQuiz);
+      setQuiz(currentQuiz || null);
     };
     loadQuiz();
-  }, [today]);
+  }, [date, today]);
 
   return (
     <AppLayout>

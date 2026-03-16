@@ -1,102 +1,142 @@
-const { GoogleGenerativeAI } = require("@google/generative-ai");
-const fs = require("fs");
-const path = require("path");
-const Parser = require("rss-parser");
-require("dotenv").config();
+import { GoogleGenerativeAI } from "@google/generative-ai";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from 'url';
+import Parser from "rss-parser";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const parser = new Parser();
 
+const RSS_FEEDS = [
+  "https://pib.gov.in/RssFull.aspx?LangId=1",
+  "https://www.thehindu.com/news/national/feeder/default.rss",
+  "https://www.thehindu.com/news/international/feeder/default.rss",
+  "https://economictimes.indiatimes.com/news/economy/rssfeedmsid-12865516.cms"
+];
+
 async function fetchNews() {
-  try {
-    // PIB English News Feed
-    const feed = await parser.parseURL("https://pib.gov.in/RssFull.aspx?LangId=1");
-    // Filter top 5 news items
-    return feed.items.slice(0, 8).map(item => ({
-      title: item.title,
-      link: item.link,
-      content: item.contentSnippet || item.content
-    }));
-  } catch (error) {
-    console.error("Error fetching news:", error);
-    return [];
+  const allNews = [];
+  for (const url of RSS_FEEDS) {
+    try {
+      console.log(`Fetching from: ${url}`);
+      const feed = await parser.parseURL(url);
+      allNews.push(...feed.items.map(item => ({
+        title: item.title,
+        link: item.link,
+        content: item.contentSnippet || item.content,
+        source: url.includes("pib") ? "PIB" : "The Hindu/ET"
+      })));
+    } catch (error) {
+      console.error(`Error fetching from ${url}:`, error);
+    }
   }
+  // Remove duplicates by title
+  const uniqueNews = Array.from(new Map(allNews.map(item => [item.title, item])).values());
+  return uniqueNews.slice(0, 15); // Top 15 items for context
 }
 
 async function generateAnalysis(newsItems) {
-  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+  const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
   const prompt = `
-    You are Samachar-Sathi AI, an expert UPSC & BPSC mentor.
-    Based on the following news items from PIB, create a comprehensive daily analysis and a quiz.
+    You are Samachar-Sathi AI, an elite senior mentor for UPSC (Union Public Service Commission) and BPSC (Bihar Public Service Commission) aspirants.
     
-    NEWS ITEMS:
+    TASK:
+    Based on the provided news items, create an extremely detailed daily news analysis and a 30-question bank.
+    
+    NEWS CONTEXT:
     ${JSON.stringify(newsItems)}
 
-    OUTPUT FORMAT:
-    Produce a JSON object matching these TypeScript types:
-    
-    interface Topic {
-      id: string;
-      title: { hi: string; en: string };
-      category: { hi: string; en: string };
-      categoryKey: string; // use kebab-case like 'international-relations', 'polity', 'economy', etc.
-      subtopics: {
-        title: { hi: string; en: string };
-        content: { hi: string; en: string };
-        keyPoints: { hi: string; en: string }[];
-        examRelevance: { hi: string; en: string };
-      }[];
-      summary: { hi: string; en: string };
-      source: string;
+    ANALYSIS REQUIREMENTS:
+    - Select 4-6 most important topics for Civil Services.
+    - For each topic:
+        1. Context: Why is it in the news?
+        2. Detailed Analysis: Cover historical background, current issues, and forward-looking perspective.
+        3. Key Points: Bulleted facts crucial for Prelims.
+        4. GS Relevance: Mention specifically which GS Paper (I, II, III, IV) it relates to.
+    - All content must be in both HINDI and ENGLISH.
+    - Provide a "Magazine Level" depth in the analysis.
+
+    MCQ REQUIREMENTS:
+    - Exactly 30 high-quality MCQs.
+    - Level: Challenging (Multi-statement questions, matching types).
+    - Language: Bilingual (Hindi and English).
+    - Source: Based strictly on the analysis provided.
+
+    JSON SCHEMA:
+    {
+      "analysis": {
+        "date": "YYYY-MM-DD",
+        "topics": [
+          {
+            "id": "T1",
+            "title": { "hi": "...", "en": "..." },
+            "category": { "hi": "...", "en": "..." },
+            "categoryKey": "polity | economy | international-relations | science-tech | environment | internal-security | social-issues",
+            "summary": { "hi": "...", "en": "..." },
+            "source": "...",
+            "subtopics": [
+              {
+                "title": { "hi": "...", "en": "..." },
+                "content": { "hi": "...", "en": "..." },
+                "keyPoints": [ { "hi": "...", "en": "..." } ],
+                "examRelevance": { "hi": "...", "en": "..." }
+              }
+            ]
+          }
+        ]
+      },
+      "mcqs": {
+        "date": "YYYY-MM-DD",
+        "questions": [
+          {
+            "id": "Q1",
+            "question": { "hi": "...", "en": "..." },
+            "options": [ { "hi": "...", "en": "..." } ],
+            "correctIndex": number,
+            "explanation": { "hi": "...", "en": "..." },
+            "topicRef": "T1"
+          }
+        ]
+      }
     }
 
-    interface DailyAnalysis {
-      date: string; // YYYY-MM-DD
-      topics: Topic[];
-    }
-
-    interface DailyQuiz {
-      date: string;
-      questions: {
-        id: string;
-        question: { hi: string; en: string };
-        options: { hi: string; en: string }[];
-        correctIndex: number;
-        explanation: { hi: string; en: string };
-        topicRef: string; // id of the topic
-      }[];
-    }
-
-    Return a combined object: { analysis: DailyAnalysis, quiz: DailyQuiz }
-    
-    CRITICAL RULES:
-    1. Language: Provide content in both Hindi (hi) and English (en).
-    2. Quality: Content must be highly relevant for UPSC/BPSC GS papers.
-    3. Quiz: Create 5 challenging MCQs based on the topics.
-    4. Date: Use today's date (${new Date().toISOString().split('T')[0]}).
-    5. ONLY return the JSON object, no Markdown wrapping or extra text.
+    CRITICAL:
+    1. ONLY return the final JSON. 
+    2. No markdown decorators. 
+    3. Use the date: ${new Date().toISOString().split('T')[0]}.
+    4. Ensure the content is academically rigorous.
   `;
 
   const result = await model.generateContent(prompt);
   const response = await result.response;
   let text = response.text();
   
-  // Clean potential markdown wrapping
   text = text.replace(/```json/g, "").replace(/```/g, "").trim();
   
-  return JSON.parse(text);
+  try {
+    return JSON.parse(text);
+  } catch (e) {
+    console.error("Failed to parse JSON. Raw text:", text);
+    throw e;
+  }
 }
 
 async function run() {
-  console.log("Fetching news...");
+  console.log("Initializing News Intelligence Process...");
   const news = await fetchNews();
   if (news.length === 0) {
-    console.log("No news found.");
+    console.log("No news found to analyze.");
     return;
   }
 
-  console.log("Generating analysis with Gemini...");
+  console.log("Deep Research & Analysis with Gemini 2.0 Flash...");
   const data = await generateAnalysis(news);
 
   const date = data.analysis.date;
@@ -111,7 +151,8 @@ async function run() {
     JSON.stringify(data, null, 2)
   );
 
-  console.log(`Successfully generated analysis for ${date}`);
+  console.log(`[SUCCESS] Intelligence Dossier Generated: public/news/${date}.json`);
 }
 
 run().catch(console.error);
+

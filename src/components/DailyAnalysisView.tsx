@@ -185,14 +185,27 @@ const DailyAnalysisView = ({ analysis }: { analysis: DailyAnalysis }) => {
             </div>
           </div>
 
-          <Button
-            onClick={() => generateDailyPDF(analysis, lang)}
-            size="lg"
-            className="bg-white text-navy hover:bg-white/90 font-bold px-8 rounded-2xl shadow-xl transition-all hover:scale-105 active:scale-95 gap-2"
-          >
-            <Download className="h-5 w-5" />
-            {lang === 'hi' ? 'PDF डाउनलोड करें' : 'Download PDF'}
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Button
+              onClick={() => generateDailyPDF(analysis, lang)}
+              size="lg"
+              className="bg-white text-navy hover:bg-white/90 font-bold px-8 rounded-2xl shadow-xl transition-all hover:scale-105 active:scale-95 gap-2"
+            >
+              <Download className="h-5 w-5" />
+              {lang === 'hi' ? 'PDF डाउनलोड करें' : 'Download PDF'}
+            </Button>
+            
+            <Button
+              asChild
+              size="lg"
+              className="bg-accent text-accent-foreground hover:bg-accent/90 font-bold px-8 rounded-2xl shadow-xl transition-all hover:scale-105 active:scale-95 gap-2"
+            >
+              <a href={`/Samachar-Sathi/quiz?date=${analysis.date}`}>
+                <Sparkles className="h-5 w-5" />
+                {lang === 'hi' ? 'टेस्ट दें (MCQ)' : 'Take MCQ Test'}
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
 

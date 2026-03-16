@@ -1,0 +1,159 @@
+{
+  "analysis": {
+    "date": "2026-03-17",
+    "topics": [
+      {
+        "id": "20260317-01",
+        "categoryKey": "economy",
+        "category": { "hi": "अर्थव्यवस्था और शासन", "en": "Economy & Governance" },
+        "title": { 
+          "hi": "ग्रामीण जल आपूर्ति के लिए 'सुजल गांव आईडी' और जेजेएम 2.0", 
+          "en": "'Sujal Gaon ID' for Rural Water Supply and JJM 2.0" 
+        },
+        "source": "PIB / Ministry of Jal Shakti",
+        "summary": {
+          "hi": "जल शक्ति मंत्रालय ने जल जीवन मिशन 2.0 के तहत ग्रामीण जल बुनियादी ढांचे के डिजिटल मानचित्रण के लिए सुजल गांव आईडी लॉन्च किया है।",
+          "en": "The Ministry of Jal Shakti has launched Sujal Gaon ID for digital mapping of rural water infrastructure under the Jal Jeevan Mission 2.0."
+        },
+        "subtopics": [
+          {
+            "title": { "hi": "सुजल गांव आईडी की मुख्य विशेषताएं", "en": "Key Features of Sujal Gaon ID" },
+            "content": {
+              "hi": "सुजल गांव आईडी प्रत्येक ग्रामीण पाइप वाली जल आपूर्ति योजना के लिए एक विशिष्ट डिजिटल पहचानकर्ता है। यह बुनियादी ढांचे के डेटा को एक राष्ट्रीय डिजिटल प्लेटफॉर्म पर एकीकृत करेगा, जिससे बेहतर स्थिति निगरानी और संसाधन प्रबंधन संभव होगा। यह पहल भारत के डिजिटल सार्वजनिक बुनियादी ढांचे (DPI) को मजबूत करने की दिशा में एक बड़ा कदम है।",
+              "en": "Sujal Gaon ID is a unique digital identifier for every rural piped water supply scheme. It will integrate infrastructure data into a national digital platform, enabling better status monitoring and resource management. This initiative is a major step towards strengthening India's Digital Public Infrastructure (DPI)."
+            },
+            "keyPoints": [
+              { "hi": "यह जल जीवन मिशन 2.0 का एक हिस्सा है।", "en": "It is part of the Jal Jeevan Mission 2.0." },
+              { "hi": "डेटा की सटीकता और जवाबदेही में सुधार होगा।", "en": "Will improve data accuracy and accountability." },
+              { "hi": "तथ्यों पर आधारित निर्णय लेने में मदद मिलेगी।", "en": "Assists in evidence-based decision-making." }
+            ],
+            "examRelevance": {
+              "hi": "जीएस पेपर II: सरकारी नीतियां और विभिन्न क्षेत्रों में विकास के लिए हस्तक्षेप।",
+              "en": "GS Paper II: Government policies and interventions for development in various sectors."
+            }
+          },
+          {
+            "title": { "hi": "जल जीवन मिशन 2.0 का रणनीतिक महत्व", "en": "Strategic Importance of JJM 2.0" },
+            "content": {
+              "hi": "JJM 2.0 का ध्यान केवल पहुंच प्रदान करने से हटकर 'सस्ती और गुणवत्तापूर्ण' आपूर्ति सुनिश्चित करने पर है। इसमें सामुदायिक भागीदारी और विकेंद्रीकृत प्रबंधन पर जोर दिया गया है।",
+              "en": "JJM 2.0 shifts focus from providing access to ensuring 'affordable and quality' supply. It emphasizes community participation and decentralized management."
+            },
+            "keyPoints": [
+              { "hi": "हर घर जल लक्ष्य को बनाए रखना।", "en": "Sustaining the 'Har Ghar Jal' goal." },
+              { "hi": "ग्रे वाटर प्रबंधन पर जोर।", "en": "Emphasis on Grey Water Management." }
+            ],
+            "examRelevance": {
+              "hi": "जीएस पेपर III: बुनियादी ढांचा: ऊर्जा, बंदरगाह, सड़क, रेलवे आदि।",
+              "en": "GS Paper III: Infrastructure: Energy, Ports, Roads, Railways etc."
+            }
+          }
+        ]
+      },
+      {
+        "id": "20260317-02",
+        "categoryKey": "environment",
+        "category": { "hi": "पर्यावरण और विज्ञान", "en": "Environment & Science" },
+        "title": { 
+          "hi": "ग्रेट इंडियन बस्टर्ड (GIB) संरक्षण के 4 वर्ष", 
+          "en": "4 Years of Great Indian Bustard (GIB) Conservation" 
+        },
+        "source": "The Hindu / MoEFCC",
+        "summary": {
+          "hi": "प्रोजेक्ट ग्रेट इंडियन बस्टर्ड ने कैप्टिव ब्रीडिंग में 70 पक्षियों की संख्या का महत्वपूर्ण मील का पत्थर हासिल किया है।",
+          "en": "Project Great Indian Bustard has achieved a key milestone with 70 birds in captive breeding."
+        },
+        "subtopics": [
+          {
+            "title": { "hi": "वर्तमान स्थिति और चुनौतियां", "en": "Current Status and Challenges" },
+            "content": {
+              "hi": "GIB को IUCN द्वारा 'गंभीर रूप से लुप्तप्राय' माना गया है। मुख्य खतरा राजस्थान और गुजरात में बिजली की लाइनों से टकराना है। संरक्षण प्रयासों के तहत, अंडे के सफल संचय और कृत्रिम ऊष्मायन (artificial incubation) ने सकारात्मक परिणाम दिखाए हैं।",
+              "en": "GIB is considered 'Critically Endangered' by IUCN. The main threat is collisions with power lines in Rajasthan and Gujarat. As part of conservation efforts, successful egg collection and artificial incubation have shown positive results."
+            },
+            "keyPoints": [
+              { "hi": "वन्यजीव (संरक्षण) अधिनियम, 1972 की अनुसूची 1 के तहत संरक्षित।", "en": "Protected under Schedule 1 of WPA, 1972." },
+              { "hi": "पक्षी आवास और सौर ऊर्जा परियोजनाओं के बीच संघर्ष।", "en": "Conflict between bird habitat and solar power projects." }
+            ],
+            "examRelevance": {
+              "hi": "प्रारंभिक परीक्षा: पर्यावरण और जैव विविधता।",
+              "en": "Prelims: Environment and Biodiversity."
+            }
+          }
+        ]
+      },
+      {
+        "id": "20260317-03",
+        "categoryKey": "international-relations",
+        "category": { "hi": "अंतर्राष्ट्रीय संबंध", "en": "International Relations" },
+        "title": { 
+          "hi": "पश्चिम एशिया संघर्ष और भारत की ऊर्जा सुरक्षा", 
+          "en": "West Asia Conflict and India's Energy Security" 
+        },
+        "source": "Indian Express / MEA",
+        "summary": {
+          "hi": "होर्मुज जलडमरूमध्य में तनाव भारत के कच्चे तेल और एलपीजी आयात के लिए जोखिम पैदा कर रहा है।",
+          "en": "Tensions in the Strait of Hormuz are posing risks to India's crude oil and LPG imports."
+        },
+        "subtopics": [
+          {
+            "title": { "hi": "होर्मुज जलडमरूमध्य का महत्व", "en": "Significance of Strait of Hormuz" },
+            "content": {
+              "hi": "यह दुनिया का सबसे महत्वपूर्ण तेल चोकपॉइंट है। भारत अपनी ऊर्जा जरूरतों का एक बड़ा हिस्सा इसी रास्ते से प्राप्त करता है। किसी भी व्यवधान का सीधा असर भारत की मुद्रास्फीति और विदेशी मुद्रा भंडार पर पड़ सकता है।",
+              "en": "It is the world's most critical oil chokepoint. India receives a large portion of its energy needs via this route. Any disruption could directly impact India's inflation and foreign exchange reserves."
+            },
+            "keyPoints": [
+              { "hi": "एलपीजी की उपलब्धता के लिए आवश्यक वस्तु अधिनियम लागू।", "en": "Essential Commodities Act invoked for LPG availability." },
+              { "hi": "भारत की नौसैनिक उपस्थिति और समुद्री सुरक्षा।", "en": "India's naval presence and maritime security." }
+            ],
+            "examRelevance": {
+              "hi": "जीएस पेपर II: भारत और उसके पड़ोस- संबंध।",
+              "en": "GS Paper II: India and its neighborhood- relations."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "mcqs": {
+    "date": "2026-03-17",
+    "questions": [
+      {
+        "id": "q1",
+        "question": { 
+          "hi": "'सुजल गांव आईडी' किस मिशन के तहत लॉन्च किया गया है?", 
+          "en": "'Sujal Gaon ID' has been launched under which mission?" 
+        },
+        "options": [
+          { "hi": "स्वच्छ भारत मिशन", "en": "Swachh Bharat Mission" },
+          { "hi": "जल जीवन मिशन 2.0", "en": "Jal Jeevan Mission 2.0" },
+          { "hi": "अमृत 2.0", "en": "AMRUT 2.0" },
+          { "hi": "नमामि गंगे", "en": "Namami Gange" }
+        ],
+        "correctIndex": 1,
+        "explanation": { 
+          "hi": "यह जल जीवन मिशन 2.0 के तहत ग्रामीण जल बुनियादी ढांचे के मानचित्रण के लिए है।", 
+          "en": "It is for mapping rural water infrastructure under Jal Jeevan Mission 2.0." 
+        },
+        "topicRef": "JJM 2.0"
+      },
+      {
+        "id": "q2",
+        "question": { 
+          "hi": "ग्रेट इंडियन बस्टर्ड (GIB) की IUCN स्थिति क्या है?", 
+          "en": "What is the IUCN status of the Great Indian Bustard (GIB)?" 
+        },
+        "options": [
+          { "hi": "लुप्तप्राय (Endangered)", "en": "Endangered" },
+          { "hi": "असुरक्षित (Vulnerable)", "en": "Vulnerable" },
+          { "hi": "गंभीर रूप से लुप्तप्राय (Critically Endangered)", "en": "Critically Endangered" },
+          { "hi": "विलुप्त होने के कगार पर", "en": "Near Threatened" }
+        ],
+        "correctIndex": 2,
+        "explanation": { 
+          "hi": "GIB को IUCN लाल सूची में 'गंभीर रूप से लुप्तप्राय' के रूप में सूचीबद्ध किया गया है।", 
+          "en": "GIB is listed as 'Critically Endangered' in the IUCN Red List." 
+        },
+        "topicRef": "GIB"
+      }
+    ]
+  }
+}

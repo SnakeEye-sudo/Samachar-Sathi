@@ -34,14 +34,13 @@ const Index = () => {
       // 2. If not in DB, try to fetch from public/news/[date].json (for deployed site)
       if (!data) {
         try {
-          // Normalize base URL for both dev and prod
-          const response = await fetch(`${window.location.origin}/news/${date}.json`);
+          const response = await fetch(`${import.meta.env.BASE_URL}news/${date}.json`);
           if (response.ok) {
             const remoteData = await response.json();
             if (remoteData.analysis) {
-              data = remoteData.analysis;
+              data = remoteData; // Store the whole object including mcqs and title
               await saveAnalysis(remoteData.analysis);
-              if (remoteData.quiz) await saveQuiz(remoteData.quiz);
+              if (remoteData.mcqs) await saveQuiz(remoteData.mcqs);
             }
           }
         } catch (error) {
