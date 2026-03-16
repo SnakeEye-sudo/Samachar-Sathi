@@ -50,7 +50,7 @@ const AppHeader = () => {
         <Link to="/" className="group flex items-center gap-3">
           <div className="relative">
             <img 
-              src="/logo.png" 
+              src={`${import.meta.env.BASE_URL}logo.png`}
               alt="Logo" 
               className="w-12 h-12 rounded-2xl shadow-lg group-hover:scale-105 transition-transform object-cover border border-border"
             />
