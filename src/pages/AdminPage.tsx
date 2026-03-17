@@ -5,13 +5,12 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/card';
 import { Database, Upload, Download, Trash2, Save, Plus, X, Newspaper, Cpu, RefreshCw, Zap, ShieldAlert, FileJson } from 'lucide-react';
-import { saveAnalysis, saveQuiz, clearAllData, getAllAnalyses, getAllQuizResults } from '@/lib/db';
+import { saveAnalysis, clearAllData, getAllAnalyses } from '@/lib/db';
 import { parseRawNewsText } from '@/lib/smartParser';
 import { toast } from 'sonner';
-import { DailyAnalysis, DailyQuiz } from '@/types/news';
+import { DailyNews } from '@/types/news';
 import AppLayout from '@/components/AppLayout';
 import { motion, AnimatePresence } from 'framer-motion';
-import { cn } from '@/lib/utils';
 
 const AdminPage = () => {
   const { lang } = useLanguage();
@@ -27,17 +26,22 @@ const AdminPage = () => {
     }
     
     setIsParsing(true);
-    // Simulate thinking
     await new Promise(r => setTimeout(r, 1500));
     
     try {
-      const analysis = parseRawNewsText(rawTextInput, selectedDate);
+      // For now, parseRawNewsText returns the structure we need.
+      // But we need to make sure the parser is updated to return DailyNews.
+      const analysis = parseRawNewsText(rawTextInput, selectedDate) as any;
       await saveAnalysis(analysis);
+      
+      const totalUnits = analysis.categories?.reduce((acc: number, cat: any) => acc + (cat.news?.length || 0), 0) || 0;
+
       toast.success(lang === 'hi' ? 'सफलतापूर्वक पार्स किया गया' : 'Sync Successful', {
-        description: lang === 'hi' ? `${analysis.topics.length} इंटेलिजेंस यूनिट सेव की गईं` : `${analysis.topics.length} intelligence units recorded`,
+        description: lang === 'hi' ? `${totalUnits} इंटेलिजेंस यूनिट सेव की गईं` : `${totalUnits} intelligence units recorded`,
       });
       setRawTextInput('');
     } catch (e) {
+      console.error(e);
       toast.error(lang === 'hi' ? 'पार्सिंग विफल' : 'Parsing Engine Error');
     } finally {
       setIsParsing(false);
@@ -47,11 +51,8 @@ const AdminPage = () => {
   const handleImport = async () => {
     try {
       const data = JSON.parse(jsonInput);
-      if (data.analysis) {
-        await saveAnalysis(data.analysis);
-      }
-      if (data.quiz) {
-        await saveQuiz(data.quiz);
+      if (data) {
+        await saveAnalysis(data);
       }
       toast.success(lang === 'hi' ? 'डेटा सिंक हुआ' : 'Data Synchronized');
       setJsonInput('');
@@ -62,8 +63,7 @@ const AdminPage = () => {
 
   const handleExport = async () => {
     const analyses = await getAllAnalyses();
-    const quizzes = await getAllQuizResults();
-    const data = { analyses, quizzes };
+    const data = { analyses };
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -118,7 +118,6 @@ const AdminPage = () => {
 
         {/* Integration Grid */}
         <div className="grid gap-8 lg:grid-cols-3">
-          {/* Parser Column */}
           <div className="lg:col-span-2 space-y-8">
             <Card className="rounded-[2.5rem] border-2 border-border overflow-hidden bg-card/50 backdrop-blur-sm shadow-xl">
               <CardHeader className="p-8 pb-4">
@@ -170,15 +169,13 @@ const AdminPage = () => {
                   disabled={isParsing || !rawTextInput.trim()}
                   className="w-full py-8 rounded-[1.5rem] gold-gradient text-accent-foreground font-black uppercase tracking-[0.2em] text-sm shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50"
                 >
-                  {isParsing ? 'Processing...' : (lang === 'hi' ? 'इंटेलिजेंस एक्सट्रैक्ट करें' : 'Extract Intelligence')}
+                   {isParsing ? 'Processing...' : (lang === 'hi' ? 'इंसर्ट/अपडेट डेटा' : 'Sync Intelligence')}
                 </Button>
               </CardContent>
             </Card>
           </div>
 
-          {/* Import/Status Column */}
           <div className="space-y-8">
-            {/* Import JSON */}
             <Card className="rounded-[2.5rem] border-2 border-border bg-card shadow-lg">
               <CardHeader className="p-8 pb-4">
                 <CardTitle className="text-xl font-display font-black flex items-center gap-2">
@@ -188,9 +185,13 @@ const AdminPage = () => {
                 <p className="text-xs text-muted-foreground font-body">Direct JSON Import/Sync</p>
               </CardHeader>
               <CardContent className="p-8 pt-0 space-y-4">
+                <div className="p-4 rounded-xl bg-orange-500/10 border border-orange-500/20 mb-4">
+                    <p className="text-[10px] text-orange-600 font-bold uppercase tracking-wider mb-1">Developer Mode</p>
+                    <p className="text-[10px] text-orange-700/70">Ensure JSON matches the DailyNews schema for correct visualization.</p>
+                </div>
                 <Textarea
-                  placeholder='{ "analysis": { ... } }'
-                  className="min-h-[200px] rounded-2xl font-mono text-xs bg-muted/50 border-none"
+                  placeholder='{ "metadata": { "date": "..." }, "categories": [...] }'
+                  className="min-h-[200px] rounded-2xl font-mono text-[10px] bg-muted/50 border-none"
                   value={jsonInput}
                   onChange={(e) => setJsonInput(e.target.value)}
                 />
@@ -200,7 +201,6 @@ const AdminPage = () => {
               </CardContent>
             </Card>
 
-            {/* Health Status */}
             <Card className="rounded-[2.5rem] border-2 border-border bg-card shadow-lg overflow-hidden">
                <div className="p-8 space-y-6">
                   <div className="flex items-center justify-between">
@@ -211,14 +211,14 @@ const AdminPage = () => {
                     </div>
                   </div>
 
-                  <div className="space-y-4">
+                  <div className="space-y-4 text-xs font-body">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs text-muted-foreground font-body">Storage Method</span>
-                      <span className="text-xs font-bold font-mono">IndexedDB / Local</span>
+                      <span className="text-muted-foreground">Version</span>
+                      <span className="font-bold">2.0.0 (Gold)</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-xs text-muted-foreground font-body">Encryption</span>
-                      <span className="text-xs font-bold font-mono">Standard Browser</span>
+                      <span className="text-muted-foreground">Encryption</span>
+                      <span className="font-bold">Local-First Vault</span>
                     </div>
                   </div>
 
@@ -227,8 +227,8 @@ const AdminPage = () => {
                       <ShieldAlert className="h-3.5 w-3.5" />
                       Security Advisory
                     </div>
-                    <p className="text-[10px] text-muted-foreground font-body leading-relaxed">
-                      Intelligence units are stored locally on this device. Incognito mode or clearing browser data will wipe the vault unless a backup is downloaded.
+                    <p className="text-[10px] text-muted-foreground leading-relaxed">
+                      Intelligence units are stored locally. Always download a Backup Vault before clearing browser memory.
                     </p>
                   </div>
                </div>

@@ -8,7 +8,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 import AppHeader from "@/components/AppHeader";
 import PwaInstallBanner from "@/components/PwaInstallBanner";
 import Index from "./pages/Index";
-import QuizPage from "./pages/QuizPage";
 import ArchivePage from "./pages/ArchivePage";
 import MagazinePage from "./pages/MagazinePage";
 import AdminPage from "./pages/AdminPage";
@@ -27,7 +26,6 @@ const App = () => (
             <AppHeader />
             <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/quiz" element={<QuizPage />} />
               <Route path="/archive" element={<ArchivePage />} />
               <Route path="/magazine" element={<MagazinePage />} />
               <Route path="/admin" element={<AdminPage />} />

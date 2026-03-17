@@ -63,7 +63,6 @@ const AppHeader = () => {
 
   const navItems = [
     { id: 'analysis', icon: BookOpen, label: { hi: 'विश्लेषण', en: 'Analysis' }, path: '/' },
-    { id: 'quiz', icon: BrainCircuit, label: { hi: 'प्रश्नोत्तरी', en: 'Quiz' }, path: '/quiz' },
     { id: 'archive', icon: Calendar, label: { hi: 'अभिलेखागार', en: 'Archive' }, path: '/archive' },
     { id: 'magazine', icon: Grid, label: { hi: 'पत्रिका', en: 'Magazine' }, path: '/magazine' },
   ];

@@ -1,76 +1,84 @@
-import { DailyAnalysis, DailyQuiz } from '@/types/news';
+import { DailyNews } from '@/types/news';
 
-export const sampleAnalysis: DailyAnalysis = {
-  date: new Date().toISOString().split('T')[0],
-  topics: [
+export const sampleAnalysis: DailyNews = {
+  metadata: {
+    date: new Date().toISOString().split('T')[0],
+    totalArticlesAnalyzed: 25,
+    generatedAt: new Date().toISOString(),
+    primaryLanguage: 'en'
+  },
+  categories: [
     {
-      id: 'topic-1',
-      title: { hi: 'भारत-मध्य पूर्व-यूरोप आर्थिक गलियारा (IMEC)', en: 'India-Middle East-Europe Economic Corridor (IMEC)' },
-      category: { hi: 'अंतर्राष्ट्रीय संबंध', en: 'International Relations' },
-      categoryKey: 'international-relations',
-      summary: { 
-        hi: 'G20 शिखर सम्मेलन के दौरान घोषित एक ऐतिहासिक कनेक्टिविटी परियोजना।', 
-        en: 'A landmark connectivity project announced during the G20 Summit.' 
-      },
-      source: 'PIB & News',
-      subtopics: [
+      name: 'GS-II: International Relations',
+      description: 'Bilateral treaties, international organizations, and diplomatic shifts.',
+      news: [
         {
-          title: { hi: 'परियोजना का महत्व', en: 'Significance of the Project' },
-          content: { 
-            hi: 'यह चीन के BRI का विकल्प प्रदान करेगा और व्यापार समय को 40% तक कम कर देगा।', 
-            en: 'It will provide an alternative to China\'s BRI and reduce trade time by 40%.' 
+          title: {
+            hi: 'भारत-फ्रांस रक्षा सहयोग में विस्तार',
+            en: 'India-France Defense Cooperation Expansion'
           },
-          keyPoints: [
-            { hi: 'रेल और पोर्ट कनेक्टिविटी', en: 'Rail and Port connectivity' },
-            { hi: 'ग्रीन हाइड्रोजन पाइपलाइन', en: 'Green hydrogen pipelines' }
-          ],
-          examRelevance: { hi: 'UPSC GS Paper 2 (IR)', en: 'UPSC GS Paper 2 (IR)' }
+          link: 'https://pib.gov.in',
+          source: 'PIB India',
+          analysis: {
+            hi: 'भारत और फ्रांस ने अपने रणनीतिक रक्षा साझेदारी को मजबूत करने के लिए नए समझौतों पर हस्ताक्षर किए हैं। इसमें लड़ाकू इंजनों के सह-विकास और हिंद महासागर में समुद्री सहयोग पर ध्यान केंद्रित किया गया है।',
+            en: 'India and France have solidified their strategic defense partnership through new agreements focusing on co-development of fighter engine technology and enhanced maritime cooperation in the Indian Ocean region.'
+          },
+          upscContext: {
+            relevance: {
+              hi: 'GS-II: द्विपक्षीय संबंधों और रक्षा कूटनीति के लिए महत्वपूर्ण।',
+              en: 'GS-II: Bilateral relations, strategic autonomy and defense diplomacy.'
+            },
+            staticLinkage: {
+              hi: 'भारत-फ्रांस रणनीतिक साझेदारी (1998), स्कॉर्पीन पनडुब्बी कार्यक्रम।',
+              en: 'India-France Strategic Partnership (1998), Scorpene Submarine program, Rafale deal context.'
+            },
+            concerns: {
+              hi: 'टेक्नोलॉजी ट्रांसफर की चुनौतियां और रक्षा बजट की सीमाएं।',
+              en: 'Challenges in high-end tech transfer and defense budget constraints.'
+            }
+          }
         }
       ]
     },
     {
-      id: 'topic-2',
-      title: { hi: 'बिहार जाति आधारित गणना 2023', en: 'Bihar Caste-based Survey 2023' },
-      category: { hi: 'सामाजिक न्याय', en: 'Social Justice' },
-      categoryKey: 'social-justice',
-      summary: { 
-        hi: 'बिहार सरकार द्वारा जारी किए गए आंकड़ों का विस्तृत विश्लेषण।', 
-        en: 'Detailed analysis of metadata released by the Bihar government.' 
-      },
-      source: 'Patna Daily',
-      subtopics: [
+      name: 'GS-III: Economy',
+      description: 'Infrastructure, energy, investment, and planning.',
+      news: [
         {
-          title: { hi: 'प्रमुख निष्कर्ष', en: 'Key Findings' },
-          content: { 
-            hi: 'अत्यंत पिछड़ा वर्ग (EBC) और अन्य पिछड़ा वर्ग (OBC) मिलकर राज्य की आबादी का 63% हिस्सा हैं।', 
-            en: 'EBC and OBC combined make up 63% of the state\'s population.' 
+          title: {
+            hi: 'भारतीय अर्थव्यवस्था की विकास दर 7% से ऊपर रहने का अनुमान',
+            en: 'Indian Economy Projected to Maintain Over 7% Growth'
           },
-          keyPoints: [
-            { hi: 'आरक्षण नीतियों पर प्रभाव', en: 'Impact on reservation policies' },
-            { hi: 'EBC की 36% भागीदारी', en: '36% share of EBC' }
-          ],
-          examRelevance: { hi: 'BPSC GS Paper 1 & 2', en: 'BPSC GS Paper 1 & 2' }
+          link: 'https://www.rbi.org.in',
+          source: 'RBI Bulletin',
+          analysis: {
+            hi: 'आरबीआई के हालिया बुलेटिन के अनुसार, घरेलू मांग और सरकारी बुनियादी ढांचे के खर्च के कारण भारतीय अर्थव्यवस्था वैश्विक चुनौतियों के बावजूद मजबूत बनी हुई है।',
+            en: 'According to the latest RBI bulletin, robust domestic demand and government infrastructure spending are driving India\'s economy despite global headwinds.'
+          },
+          upscContext: {
+            relevance: {
+              hi: 'GS-III: समावेशी विकास और आर्थिक नियोजन।',
+              en: 'GS-III: Inclusive growth and economic planning issues.'
+            },
+            staticLinkage: {
+              hi: 'मौद्रिक नीति, जीडीपी गणना के तरीके, खुदरा मुद्रास्फीति।',
+              en: 'Monetary Policy Committee, GDP calculation methods, CPI vs WPI.'
+            }
+          }
         }
       ]
-    }
-  ]
-};
-
-export const sampleQuiz: DailyQuiz = {
-  date: new Date().toISOString().split('T')[0],
-  questions: [
-    {
-      id: 'q1',
-      question: { hi: 'IMEC में कौन सा देश शामिल नहीं है?', en: 'Which country is not part of IMEC?' },
-      options: [
-        { hi: 'भारत', en: 'India' },
-        { hi: 'सऊदी अरब', en: 'Saudi Arabia' },
-        { hi: 'चीन', en: 'China' },
-        { hi: 'अमेरिका', en: 'USA' }
-      ],
-      correctIndex: 2,
-      explanation: { hi: 'चीन IMEC का हिस्सा नहीं है, यह परियोजना BRI के विकल्प के रूप में देखी जा रही है।', en: 'China is not part of IMEC; the project is seen as an alternative to BRI.' },
-      topicRef: 'topic-1'
-    }
+    },
+    { name: 'GS-II: Governance & Social Justice', news: [] },
+    { name: 'GS-II: Constitution & Polity', news: [] },
+    { name: 'GS-III: Science & Tech', news: [] },
+    { name: 'GS-III: Environment & Disaster Mgmt', news: [] },
+    { name: 'GS-III: Internal Security', news: [] },
+    { name: 'GS-I: History & Art Culture', news: [] },
+    { name: 'GS-I: Geography', news: [] },
+    { name: 'GS-I: Society', news: [] },
+    { name: 'GS-IV: Ethics & Integrity', news: [] },
+    { name: 'Economics Optional Segment', news: [] },
+    { name: 'Geography Optional Segment', news: [] },
+    { name: 'PSIR Optional Segment', news: [] }
   ]
 };

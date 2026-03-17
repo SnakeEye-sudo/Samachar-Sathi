@@ -1,73 +1,80 @@
-import { DailyAnalysis, Topic, SubTopic } from '@/types/news';
+import { DailyNews, Category, NewsUnit } from '@/types/news';
 
 /**
- * Smart Parser to convert raw news text into structured Samachar-Sathi topics.
- * This works locally without any API.
+ * Smart Parser to convert raw news text into structured Samachar-Sathi categories.
+ * Updated for the 14-category UPSC structure.
  */
-export const parseRawNewsText = (text: string, date: string): DailyAnalysis => {
+export const parseRawNewsText = (text: string, date: string): DailyNews => {
   const lines = text.split('\n').filter(l => l.trim().length > 0);
-  const topics: Topic[] = [];
   
-  let currentTopic: Partial<Topic> | null = null;
-  let currentSubtopics: SubTopic[] = [];
+  // Initialize categories
+  const categories: Category[] = [
+    { name: 'GS-II: International Relations', news: [] },
+    { name: 'GS-III: Economy', news: [] },
+    { name: 'GS-II: Governance & Social Justice', news: [] },
+    { name: 'GS-II: Constitution & Polity', news: [] },
+    { name: 'GS-III: Science & Tech', news: [] },
+    { name: 'GS-III: Environment & Disaster Mgmt', news: [] },
+    { name: 'GS-III: Internal Security', news: [] },
+    { name: 'GS-I: History & Art Culture', news: [] },
+    { name: 'GS-I: Geography', news: [] },
+    { name: 'GS-I: Society', news: [] },
+    { name: 'GS-IV: Ethics & Integrity', news: [] },
+    { name: 'Economics Optional Segment', news: [] },
+    { name: 'Geography Optional Segment', news: [] },
+    { name: 'PSIR Optional Segment', news: [] }
+  ];
 
-  const createEmptySubtitle = (title: string): SubTopic => ({
-    title: { hi: title, en: title },
-    content: { hi: '', en: '' },
-    keyPoints: [],
-    examRelevance: { hi: 'उच्च', en: 'High' }
-  });
+  let currentCategory = categories[0];
+  let currentNews: Partial<NewsUnit> | null = null;
 
   lines.forEach((line) => {
-    // Detect main topic header (e.g., "1. Topic Name" or "TOPIC: ...")
-    if (line.match(/^\d+\.|\bTOPIC:|\bSUBJECT:/i) || (line.length < 80 && line.toUpperCase() === line && line.length > 5)) {
-      if (currentTopic) {
-        currentTopic.subtopics = currentSubtopics;
-        topics.push(currentTopic as Topic);
+    const trimmed = line.trim();
+    
+    // Check if line matches a category name
+    const categoryMatch = categories.find(c => trimmed.toUpperCase().includes(c.name.toUpperCase()));
+    if (categoryMatch) {
+      currentCategory = categoryMatch;
+      return;
+    }
+
+    // Detect a news title (usually starts with number or bullet or is short and bold-like)
+    if (trimmed.match(/^\d+\.|\bTOPIC:|\bSUBJECT:|^[•*-]/i) || (trimmed.length < 100 && trimmed.toUpperCase() === trimmed && trimmed.length > 10)) {
+      if (currentNews && currentNews.title) {
+        currentCategory.news.push(currentNews as NewsUnit);
       }
       
-      const cleanTitle = line.replace(/^\d+\.|\bTOPIC:|\bSUBJECT:/i, '').trim();
-      currentTopic = {
-        id: `topic-${Date.now()}-${topics.length}`,
+      const cleanTitle = trimmed.replace(/^\d+\.|\bTOPIC:|\bSUBJECT:|^[•*-]/i, '').trim();
+      currentNews = {
         title: { hi: cleanTitle, en: cleanTitle },
-        category: { hi: 'करेंट अफेयर्स', en: 'Current Affairs' },
-        categoryKey: 'current-affairs',
-        summary: { hi: 'यह टॉपिक न्यूज़ से ऑटो-पार्स्ड है।', en: 'This topic is auto-parsed from news.' },
+        link: '#',
         source: 'Auto-Parsed',
+        analysis: { hi: '', en: '' },
+        upscContext: {
+          relevance: { hi: 'UPSC Relevance', en: 'UPSC Relevance' },
+          staticLinkage: { hi: 'Static Linkage', en: 'Static Linkage' }
+        }
       };
-      currentSubtopics = [];
-    } else if (currentTopic) {
-      if (line.length < 120 && !line.includes('.')) {
-        currentSubtopics.push(createEmptySubtitle(line));
-      } else if (currentSubtopics.length > 0) {
-        const last = currentSubtopics[currentSubtopics.length - 1];
-        last.content.hi += (last.content.hi ? '\n' : '') + line;
-        last.content.en += (last.content.en ? '\n' : '') + line;
-      } else {
-        currentSubtopics.push(createEmptySubtitle('Details'));
-        currentSubtopics[0].content.hi = line;
-        currentSubtopics[0].content.en = line;
+    } else if (currentNews) {
+      // Append to analysis
+      if (currentNews.analysis) {
+        currentNews.analysis.hi += (currentNews.analysis.hi ? '\n' : '') + trimmed;
+        currentNews.analysis.en += (currentNews.analysis.en ? '\n' : '') + trimmed;
       }
     }
   });
 
-  if (currentTopic) {
-    currentTopic.subtopics = currentSubtopics;
-    topics.push(currentTopic as Topic);
+  if (currentNews && currentNews.title) {
+    currentCategory.news.push(currentNews as NewsUnit);
   }
 
   return {
-    date,
-    topics: topics.length > 0 ? topics : [
-      {
-        id: 'no-topics',
-        title: { hi: 'कोई विषय नहीं मिला', en: 'No topics found' },
-        category: { hi: 'त्रुटि', en: 'Error' },
-        categoryKey: 'error',
-        summary: { hi: 'टेक्स्ट को पार्स नहीं किया जा सका।', en: 'Could not parse text.' },
-        source: 'Parser',
-        subtopics: [createEmptySubtitle('Help')]
-      }
-    ]
+    metadata: {
+      date,
+      totalArticlesAnalyzed: categories.reduce((acc, cat) => acc + cat.news.length, 0),
+      generatedAt: new Date().toISOString(),
+      primaryLanguage: 'hi'
+    },
+    categories
   };
 };

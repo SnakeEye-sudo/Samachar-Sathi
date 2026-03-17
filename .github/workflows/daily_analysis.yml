@@ -2,8 +2,8 @@ name: Complete Daily News Analysis for UPSC/BPSC
 
 on:
   schedule:
-    # Runs every day at 2:30 AM IST (9:00 PM UTC previous day)
-    - cron: '0 21 * * *'
+    # Runs every day at 6:00 AM IST (00:30 AM UTC)
+    - cron: '30 0 * * *'
   workflow_dispatch: # Manual trigger
 
 jobs:
