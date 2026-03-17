@@ -1,4 +1,7 @@
 import { useLanguage } from '@/context/LanguageContext';
+import { useEffect as useAuthEffect, useState as useAuthState } from 'react';
+import { signInWithGoogle, logout, onAuthChange } from '@/lib/authService';
+import { User } from 'firebase/auth';
 import { useTheme } from '@/components/theme-provider';
 import { 
   Menu, 
@@ -10,7 +13,9 @@ import {
   BrainCircuit, 
   Calendar,
   Settings,
-  Languages
+  Languages,
+  LogOut,
+  UserCircle
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
@@ -21,6 +26,7 @@ const AppHeader = () => {
   const { lang, setLang } = useLanguage();
   const { theme, setTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
+    const [user, setUser] = useAuthState<User | null>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -28,6 +34,30 @@ const AppHeader = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+    // Auth state listener
+  useAuthEffect(() => {
+    const unsubscribe = onAuthChange((user) => {
+      setUser(user);
+    });
+    return () => unsubscribe();
+  }, []);
+
+    const handleSignIn = async () => {
+    try {
+      await signInWithGoogle();
+    } catch (error) {
+      console.error('Sign in failed:', error);
+    }
+  };
+
+  const handleSignOut = async () => {
+    try {
+      await logout();
+    } catch (error) {
+      console.error('Sign out failed:', error);
+    }
+  };
 
   const navItems = [
     { id: 'analysis', icon: BookOpen, label: { hi: 'विश्लेषण', en: 'Analysis' }, path: '/' },
@@ -109,6 +139,32 @@ const AppHeader = () => {
           >
             {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
           </button>
+
+                    {/* User Profile / Sign In */}
+          {user ? (
+            <div className="flex items-center gap-2">
+              <img 
+                src={user.photoURL || ''} 
+                alt={user.displayName || 'User'}
+                className="w-8 h-8 rounded-full border-2 border-primary"
+              />
+              <button
+                onClick={handleSignOut}
+                className="w-10 h-10 rounded-full hover:bg-muted flex items-center justify-center transition-colors"
+                title="Sign Out"
+              >
+                <LogOut className="w-5 h-5" />
+              </button>
+            </div>
+          ) : (
+            <button
+              onClick={handleSignIn}
+              className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-colors"
+            >
+              <UserCircle className="w-5 h-5" />
+              <span className="text-sm font-medium">{lang === 'hi' ? 'साइन इन' : 'Sign In'}</span>
+            </button>
+          )}
 
           {/* Admin/Settings */}
           <Link
