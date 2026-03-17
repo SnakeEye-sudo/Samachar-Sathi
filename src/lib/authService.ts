@@ -50,3 +50,22 @@ export const logout = async (): Promise<void> => {
 export const onAuthChange = (callback: (user: User | null) => void) => {
   return onAuthStateChanged(auth, callback);
 };
+
+// Cross-app SSO: ParikshaSathi se aane par URL token se auto sign-in
+// Same Firebase project share karte hain — browser IndexedDB se auth state persist hoti hai.
+// Agar user already signed in hai (same browser) to onAuthStateChanged automatically fire karega.
+// ps_uid param se user info pre-fill karte hain UI mein jab tak auth state load ho.
+export const autoSignInFromUrl = async (): Promise<User | null> => {
+  const params = new URLSearchParams(window.location.search);
+  const hasToken = params.has('ps_token') || params.has('ps_uid');
+  if (!hasToken) return null;
+
+  // Clean params from URL without page reload
+  const cleanUrl = window.location.pathname + window.location.hash;
+  window.history.replaceState({}, '', cleanUrl);
+
+  // Same Firebase project — auth state is already persisted in browser IndexedDB.
+  // Just wait for onAuthStateChanged to fire (handled in AppHeader).
+  // Return current user if already available.
+  return auth.currentUser;
+};

@@ -1,33 +1,48 @@
 <!doctype html>
-<html lang="en">
+<html lang="hi">
   <head>
     <meta charset="UTF-8" />
-        <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE" />
-        <meta name="google-adsense-account" content="ca-pub-YOUR_PUBLISHER_ID">
+    <meta name="google-site-verification" content="k3PkpbFH3gCWuMlzTK1jIPdqQqmPw5AhHs4d1BFn6rY" />
+    <meta name="google-adsense-account" content="ca-pub-9998969711223461" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- TODO: Set the document title to the name of your application -->
-    <title>Samachar-Sathi | Knowledge Nexus</title>
-    <meta name="description" content="High-fidelity news analysis and intelligence for UPSC and competitive excellence." />
-    <meta name="author" content="Samachar-Sathi Team" />
+    <title>SamacharSathi — Daily News Analysis | UPSC Current Affairs</title>
+    <meta name="description" content="Free daily news analysis and intelligence for UPSC, BPSC, SSC aspirants. Current affairs, MCQ quiz, monthly magazine — by Er. Sangam Krishna." />
+    <meta name="author" content="Er. Sangam Krishna" />
+    <meta name="theme-color" content="#f59e0b" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="SamacharSathi" />
 
     <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="apple-touch-icon" href="logo.png" />
+    <link rel="manifest" href="manifest.json" />
 
-    <meta property="og:title" content="Samachar-Sathi | Knowledge Nexus" />
-    <meta property="og:description" content="Premium daily news analysis and intelligence reports for UPSC aspirants." />
+    <meta property="og:title" content="SamacharSathi — Daily News Analysis" />
+    <meta property="og:description" content="Free daily news analysis for UPSC & competitive exam aspirants. By Er. Sangam Krishna." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="logo.png" />
+    <meta property="og:url" content="https://snakeeye-sudo.github.io/Samachar-Sathi/" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Samachar-Sathi" />
-    <meta name="twitter:description" content="Premium daily news analysis and intelligence reports." />
+    <meta name="twitter:title" content="SamacharSathi — Daily News Analysis" />
+    <meta name="twitter:description" content="Free daily news analysis for UPSC aspirants." />
     <meta name="twitter:image" content="logo.png" />
-        <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"
-         crossorigin="anonymous"></script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9998969711223461" crossorigin="anonymous"></script>
   </head>
 
   <body>
     <div id="root"></div>
     <script type="module" src="src/main.tsx"></script>
+    <!-- Register Service Worker for PWA -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/Samachar-Sathi/sw.js').catch(() => {});
+        });
+      }
+    </script>
   </body>
 </html>

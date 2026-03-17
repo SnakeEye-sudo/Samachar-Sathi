@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { ThemeProvider } from "@/components/theme-provider";
 import AppHeader from "@/components/AppHeader";
+import PwaInstallBanner from "@/components/PwaInstallBanner";
 import Index from "./pages/Index";
 import QuizPage from "./pages/QuizPage";
 import ArchivePage from "./pages/ArchivePage";
@@ -23,6 +24,7 @@ const App = () => (
           <Toaster />
           <Sonner />
           <BrowserRouter basename="/Samachar-Sathi">
+            <AppHeader />
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/quiz" element={<QuizPage />} />
@@ -31,6 +33,7 @@ const App = () => (
               <Route path="/admin" element={<AdminPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
+            <PwaInstallBanner />
           </BrowserRouter>
         </LanguageProvider>
       </ThemeProvider>

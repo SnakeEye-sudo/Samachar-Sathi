@@ -1,6 +1,6 @@
 import { useLanguage } from '@/context/LanguageContext';
 import { useEffect as useAuthEffect, useState as useAuthState } from 'react';
-import { signInWithGoogle, logout, onAuthChange } from '@/lib/authService';
+import { signInWithGoogle, logout, onAuthChange, autoSignInFromUrl } from '@/lib/authService';
 import { User } from 'firebase/auth';
 import { useTheme } from '@/components/theme-provider';
 import { 
@@ -35,8 +35,10 @@ const AppHeader = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-    // Auth state listener
+  // Auth state listener
   useAuthEffect(() => {
+    // Try cross-app SSO from URL token first (coming from ParikshaSathi)
+    autoSignInFromUrl();
     const unsubscribe = onAuthChange((user) => {
       setUser(user);
     });

@@ -2,14 +2,15 @@ import { initializeApp } from 'firebase/app';
 import { getAuth, GoogleAuthProvider } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
+// Shared Firebase project — same as ParikshaSathi for cross-app SSO
 const firebaseConfig = {
-  apiKey: "AIzaSyD3RPAk3vw5lfy5gD_WVl5TW-qVgX8yk7c",
-  authDomain: "sangamkrishna-48c6e.firebaseapp.com",
-  projectId: "sangamkrishna-48c6e",
-  storageBucket: "sangamkrishna-48c6e.firebasestorage.app",
-  messagingSenderId: "1040109761923",
-  appId: "1:1040109761923:web:a02e99e55ba9fd3a32f5e1",
-  measurementId: "G-E5PF17MLJL"
+  apiKey: "AIzaSyC6Cpg83N8fBuvY7YOSwTWsfM9DUsaVc3E",
+  authDomain: "pariksha-sathi.firebaseapp.com",
+  projectId: "pariksha-sathi",
+  storageBucket: "pariksha-sathi.firebasestorage.app",
+  messagingSenderId: "921721697043",
+  appId: "1:921721697043:web:dada90a420c40e11ae60e6",
+  measurementId: "G-NC7955J7KV"
 };
 
 const app = initializeApp(firebaseConfig);
