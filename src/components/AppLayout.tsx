@@ -14,21 +14,23 @@ const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
       </main>
       <footer className="border-t border-border py-8 bg-muted/50">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-sm text-muted-foreground font-body">
-            &copy; {new Date().getFullYear()} Samachar-Sathi. 
-            All your local analysis is stored in the Samachar-Sathi Vault.
-                            <p className="text-xs text-muted-foreground mt-4">
-                  Developed with ❤️ by{' '}
-                  <a 
-                    href="https://github.com/SnakeEye-sudo" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="font-semibold text-primary hover:underline transition-colors"
-                  >
-                    Er. Sangam Krishna
-                  </a>
-                </p>
-          </p>
+          <div className="text-sm text-muted-foreground font-body">
+            <p>
+              &copy; {new Date().getFullYear()} Samachar-Sathi. 
+              All your local analysis is stored in the Samachar-Sathi Vault.
+            </p>
+            <p className="text-xs text-muted-foreground mt-4">
+              Developed with ❤️ by{' '}
+              <a 
+                href="https://github.com/SnakeEye-sudo" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="font-semibold text-primary hover:underline transition-colors"
+              >
+                Er. Sangam Krishna
+              </a>
+            </p>
+          </div>
         </div>
       </footer>
     </div>

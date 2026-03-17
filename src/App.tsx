@@ -23,7 +23,6 @@ const App = () => (
           <Toaster />
           <Sonner />
           <BrowserRouter basename="/Samachar-Sathi">
-            <AppHeader />
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/archive" element={<ArchivePage />} />
