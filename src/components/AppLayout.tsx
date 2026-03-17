@@ -17,6 +17,17 @@ const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
           <p className="text-sm text-muted-foreground font-body">
             &copy; {new Date().getFullYear()} Samachar-Sathi. 
             All your local analysis is stored in the Samachar-Sathi Vault.
+                            <p className="text-xs text-muted-foreground mt-4">
+                  Developed with ❤️ by{' '}
+                  <a 
+                    href="https://github.com/SnakeEye-sudo" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="font-semibold text-primary hover:underline transition-colors"
+                  >
+                    Er. Sangam Krishna
+                  </a>
+                </p>
           </p>
         </div>
       </footer>
