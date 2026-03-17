@@ -247,6 +247,68 @@ For issues or questions:
 
 ---
 
+## 🔐 Authentication & User Management
+
+- **Google Sign-In**: Secure OAuth authentication via Firebase
+- **User Profiles**: Persistent user data with Firestore
+- **Session Management**: Automatic auth state tracking
+- **Privacy First**: No sensitive data stored, only basic profile info
+
+## 🌐 SEO & Discovery
+
+- **Google Search Console**: Verified and optimized for search
+- **Dynamic Sitemap**: Auto-updated XML sitemap for all pages
+- **Meta Tags**: Comprehensive Open Graph and Twitter Card support
+- **Structured Data**: Rich snippets for better search visibility
+
+## 📊 Analytics & Monetization
+
+- **Google AdSense**: Integrated ad units (optional, non-intrusive)
+- **Performance Tracking**: Lighthouse score optimized
+- **User Analytics**: Privacy-focused usage insights
+
+## ⚙️ Technical Stack
+
+**Frontend:**
+- React 18 with TypeScript
+- Vite for blazing-fast builds
+- Tailwind CSS + shadcn/ui
+- Framer Motion animations
+
+**Backend Services:**
+- Firebase Authentication
+- Cloud Firestore database
+- GitHub Actions for CI/CD
+- Google Gemini AI for content generation
+
+**Deployment:**
+- GitHub Pages (automated)
+- CDN-optimized delivery
+- Progressive Web App ready
+
+## 🚀 Deployment
+
+The app auto-deploys to GitHub Pages on every push to `main` branch:
+
+```yaml
+# Automated via GitHub Actions
+- Build with Node.js 20
+- Firebase environment variables injected
+- Deploy to gh-pages branch
+```
+
+Live URL: [https://snakeeye-sudo.github.io/Samachar-Sathi/](https://snakeeye-sudo.github.io/Samachar-Sathi/)
+
+## 🔒 Environment Variables
+
+Required for Firebase integration (set in GitHub Secrets):
+
+```env
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain  
+VITE_FIREBASE_PROJECT_ID=your_project_id
+```
+
 **Made with ❤️ for UPSC/BPSC aspirants**
 
 **Last Updated**: March 17, 2026
