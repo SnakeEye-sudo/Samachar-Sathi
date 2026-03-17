@@ -23,3 +23,26 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+# Sensitive credentials and secrets (NEVER commit)
+*.key
+*.pem
+.secrets/
+secrets.json
+credentials.json
+config.secret.js
+.env.local
+.env.*.local
+
+# API keys and tokens
+.firebase.json
+.telegram*
+*credentials*
+*.token
+
+# Database and cache
+*.db
+*.sqlite
+*.sqlite3
+.cache/
