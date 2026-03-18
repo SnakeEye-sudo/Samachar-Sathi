@@ -15,6 +15,9 @@ const PwaInstallBanner = () => {
 
   useEffect(() => {
     // Check if already dismissed
+    if (window.matchMedia('(display-mode: standalone)').matches) {
+      localStorage.setItem('sathi-installed-samachar-sathi', 'true');
+    }
     if (localStorage.getItem('ss_pwa_dismissed')) return;
 
     // Capture install prompt
@@ -24,6 +27,9 @@ const PwaInstallBanner = () => {
       setShowInstall(true);
     };
     window.addEventListener('beforeinstallprompt', handler);
+    window.addEventListener('appinstalled', () => {
+      localStorage.setItem('sathi-installed-samachar-sathi', 'true');
+    });
 
     // Check notification permission
     if ('Notification' in window) {
@@ -44,6 +50,7 @@ const PwaInstallBanner = () => {
     await installPrompt.prompt();
     const { outcome } = await installPrompt.userChoice;
     if (outcome === 'accepted') {
+      localStorage.setItem('sathi-installed-samachar-sathi', 'true');
       setShowInstall(false);
       localStorage.setItem('ss_pwa_dismissed', '1');
     }

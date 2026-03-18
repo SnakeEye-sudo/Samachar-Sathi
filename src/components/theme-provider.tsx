@@ -26,8 +26,9 @@ export function ThemeProvider({
   storageKey = "vite-ui-theme",
   ...props
 }: ThemeProviderProps) {
+  const familyThemeModeKey = "sathi-family-theme-mode";
   const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
+    () => (localStorage.getItem(familyThemeModeKey) as Theme) || (localStorage.getItem(storageKey) as Theme) || defaultTheme
   )
 
   useEffect(() => {
@@ -52,9 +53,21 @@ export function ThemeProvider({
     theme,
     setTheme: (theme: Theme) => {
       localStorage.setItem(storageKey, theme)
+      localStorage.setItem(familyThemeModeKey, theme)
       setTheme(theme)
     },
   }
+
+  useEffect(() => {
+    const handleStorage = (event: StorageEvent) => {
+      if (event.key === storageKey || event.key === familyThemeModeKey) {
+        setTheme((localStorage.getItem(familyThemeModeKey) as Theme) || (localStorage.getItem(storageKey) as Theme) || defaultTheme)
+      }
+    }
+
+    window.addEventListener("storage", handleStorage)
+    return () => window.removeEventListener("storage", handleStorage)
+  }, [defaultTheme, storageKey])
 
   return (
     <ThemeProviderContext.Provider {...props} value={value}>
