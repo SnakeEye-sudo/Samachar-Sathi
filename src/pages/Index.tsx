@@ -22,7 +22,7 @@ const Index = () => {
             <div className="mt-8 grid gap-4 sm:grid-cols-3 text-left">
               {[
                 'The interface is being polished for a smoother launch experience.',
-                'Content structure and publishing workflows will be introduced in the next release stage.',
+                'Content structure and release details will be introduced in the next release stage.',
                 'A fully live version will be made available here shortly.',
               ].map((item) => (
                 <div
