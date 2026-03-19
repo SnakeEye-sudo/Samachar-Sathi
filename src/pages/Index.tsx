@@ -1,142 +1,40 @@
-import { useLanguage } from '@/context/LanguageContext';
-import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
 import AppLayout from '@/components/AppLayout';
-import { getAnalysisByDate, saveAnalysis } from '@/lib/db';
-import { sampleAnalysis } from '@/lib/seedData';
-import DailyAnalysisView from '@/components/DailyAnalysisView';
-import { DailyNews } from '@/types/news';
-import { Calendar as CalendarIcon, Sparkles } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
-import { Calendar } from '@/components/ui/calendar';
-import { format } from 'date-fns';
-import { fetchAnalysisByDateFromGoogleSheet } from '@/lib/googleSheetNews';
 
 const Index = () => {
-  const { lang } = useLanguage();
-  const [searchParams, setSearchParams] = useSearchParams();
-  const dateParam = searchParams.get('date');
-  const today = new Date().toISOString().split('T')[0];
-  const date = dateParam || today;
-
-  const [analysis, setAnalysis] = useState<DailyNews | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    let isMounted = true;
-
-    const loadData = async () => {
-      setLoading(true);
-
-      let data: DailyNews | null | undefined = null;
-
-      try {
-        data = await fetchAnalysisByDateFromGoogleSheet(date);
-        if (data) {
-          await saveAnalysis(data);
-        }
-      } catch (error) {
-        console.error('Error fetching Google Sheet news:', error);
-      }
-
-      if (!data) {
-        data = await getAnalysisByDate(date);
-      }
-
-      if (!data) {
-        try {
-          const response = await fetch(`${import.meta.env.BASE_URL}news/${date}.json`);
-          if (response.ok) {
-            data = await response.json();
-            if (data) await saveAnalysis(data);
-          }
-        } catch (error) {
-          console.error('Error fetching remote news:', error);
-        }
-      }
-
-      if (!data && date === today) {
-        data = sampleAnalysis;
-        await saveAnalysis(sampleAnalysis);
-      }
-
-      if (!isMounted) return;
-      setAnalysis(data || null);
-      setLoading(false);
-    };
-
-    void loadData();
-
-    return () => {
-      isMounted = false;
-    };
-  }, [date, today]);
-
-  const handleDateChange = (newDate: Date | undefined) => {
-    if (newDate) {
-      const formattedDate = format(newDate, 'yyyy-MM-dd');
-      setSearchParams({ date: formattedDate });
-    }
-  };
-
   return (
     <AppLayout>
-      <div className="max-w-6xl mx-auto space-y-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 px-4">
-          <div className="space-y-1 text-center md:text-left">
-            <h2 className="text-3xl font-display font-black tracking-tight text-foreground">
-              {lang === 'hi' ? 'दैनिक बुलेटिन' : 'Daily Intelligence'}
+      <div className="max-w-5xl mx-auto px-4 py-8 sm:py-14">
+        <section className="rounded-[2rem] border border-accent/20 bg-gradient-to-br from-background via-background to-accent/10 shadow-2xl overflow-hidden">
+          <div className="px-6 py-10 sm:px-10 sm:py-14 text-center">
+            <div className="inline-flex items-center rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-xs sm:text-sm font-bold uppercase tracking-[0.24em] text-accent">
+              Work In Progress
+            </div>
+
+            <h2 className="mt-6 text-3xl sm:text-5xl font-display font-black tracking-tight text-foreground leading-tight">
+              Samachar Sathi is currently under development and will be live soon.
             </h2>
-            <p className="text-muted-foreground font-body text-sm font-bold uppercase tracking-widest flex items-center gap-2 justify-center md:justify-start">
-              <CalendarIcon className="h-3 w-3" />
-              {format(new Date(date), 'PPP')}
-            </p>
-            <p className="text-xs font-semibold text-accent">
-              {lang === 'hi' ? 'लाइव गूगल शीट सिंक सक्रिय है।' : 'Live Google Sheet sync is active.'}
-            </p>
-          </div>
 
-          <div className="flex items-center gap-3">
-            <Popover>
-              <PopoverTrigger asChild>
-                <Button variant="outline" className="rounded-full border-2 py-6 px-6 font-bold gap-3 shadow-md hover:border-accent">
-                  <CalendarIcon className="h-5 w-5 text-accent" />
-                  {lang === 'hi' ? 'बुलेटिन बदलें' : 'Change Date'}
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent className="w-auto p-0 rounded-3xl" align="end">
-                <Calendar
-                  mode="single"
-                  selected={new Date(date)}
-                  onSelect={handleDateChange}
-                  initialFocus
-                />
-              </PopoverContent>
-            </Popover>
-          </div>
-        </div>
+            <p className="mt-4 max-w-2xl mx-auto text-sm sm:text-lg text-muted-foreground leading-relaxed">
+              We are actively refining the product experience and preparing the platform for launch.
+              Thank you for your patience while the final updates are being completed.
+            </p>
 
-        {loading ? (
-          <div className="flex flex-col items-center justify-center min-h-[500px] space-y-6">
-            <div className="relative">
-              <div className="w-16 h-16 rounded-[1.5rem] border-4 border-accent/20 border-t-accent animate-spin" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <Sparkles className="h-6 w-6 text-accent animate-pulse" />
-              </div>
+            <div className="mt-8 grid gap-4 sm:grid-cols-3 text-left">
+              {[
+                'The interface is being polished for a smoother launch experience.',
+                'Content structure and publishing workflows will be introduced in the next release stage.',
+                'A fully live version will be made available here shortly.',
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="rounded-3xl border border-border/70 bg-card/80 px-4 py-4 text-sm text-muted-foreground shadow-sm"
+                >
+                  {item}
+                </div>
+              ))}
             </div>
           </div>
-        ) : analysis ? (
-          <DailyAnalysisView analysis={analysis} />
-        ) : (
-          <div className="flex flex-col items-center justify-center min-h-[500px] text-center px-4">
-            <h2 className="text-2xl font-display font-black text-foreground">{lang === 'hi' ? 'डेटा नहीं मिला' : 'Intelligence Not Found'}</h2>
-            <p className="text-muted-foreground mt-2">{lang === 'hi' ? 'इस तिथि के लिए कोई डेटा उपलब्ध नहीं है।' : 'No data recorded for this date.'}</p>
-            <Button onClick={() => setSearchParams({ date: today })} className="mt-6 rounded-2xl px-8">
-              {lang === 'hi' ? 'आज पर लौटें' : 'Back to Today'}
-            </Button>
-          </div>
-        )}
+        </section>
       </div>
     </AppLayout>
   );
