@@ -42,6 +42,14 @@ const normalizeText = (value: unknown) => String(value ?? '').trim();
 const getSheetUrl = () =>
   `https://docs.google.com/spreadsheets/d/${SAMACHAR_SHEET_ID}/gviz/tq?sheet=${encodeURIComponent(SAMACHAR_SHEET_NAME)}`;
 
+const FALLBACK_HEADER_MAP: Record<string, string> = {
+  'Category / श्रेणी': 'category',
+  'News Topic (English)': 'titleEn',
+  'समाचार का विषय (Hindi)': 'titleHi',
+  'Key Details (English)': 'analysisEn',
+  'मुख्य विवरण (Hindi)': 'analysisHi',
+};
+
 const loadGoogleSheet = async (): Promise<GoogleSheetResponse> => {
   if (typeof window === 'undefined' || !document.body) {
     throw new Error('Google Sheet loader requires a browser context.');
@@ -102,6 +110,28 @@ const buildRowRecord = (headers: string[], row: GoogleSheetRow) => {
   return record;
 };
 
+const getEffectiveHeaders = (response: GoogleSheetResponse): { headers: string[]; rows: GoogleSheetRow[] } => {
+  const rawHeaders = response.table?.cols.map(col => normalizeHeader(col.label || '')) ?? [];
+  const rows = response.table?.rows ?? [];
+
+  if (rawHeaders.some(Boolean)) {
+    return { headers: rawHeaders, rows };
+  }
+
+  const firstRow = rows[0];
+  if (!firstRow) {
+    return { headers: rawHeaders, rows };
+  }
+
+  const firstRowHeaders = firstRow.c.map(cell => {
+    const original = normalizeText(cell?.v ?? cell?.f ?? '');
+    const mapped = FALLBACK_HEADER_MAP[original] || original;
+    return normalizeHeader(mapped);
+  });
+
+  return { headers: firstRowHeaders, rows: rows.slice(1) };
+};
+
 const getString = (record: Record<string, string | number>, ...keys: string[]) => {
   for (const key of keys) {
     const value = record[normalizeHeader(key)];
@@ -125,7 +155,7 @@ const mapRecordToNewsRow = (record: Record<string, string | number>): ParsedNews
   const titleEn = getString(record, 'titleEn', 'title_en');
   const titleHi = getString(record, 'titleHi', 'title_hi') || titleEn;
 
-  if (!date || !category || (!titleEn && !titleHi)) {
+  if (!category || (!titleEn && !titleHi)) {
     return null;
   }
 
@@ -142,15 +172,15 @@ const mapRecordToNewsRow = (record: Record<string, string | number>): ParsedNews
         hi: titleHi || titleEn,
       },
       link: getString(record, 'link'),
-      source: getString(record, 'source'),
+      source: getString(record, 'source') || 'Google Sheet',
       analysis: {
         en: getString(record, 'analysisEn', 'analysis_en'),
         hi: getString(record, 'analysisHi', 'analysis_hi') || getString(record, 'analysisEn', 'analysis_en'),
       },
       upscContext: {
         relevance: {
-          en: getString(record, 'relevanceEn', 'relevance_en'),
-          hi: getString(record, 'relevanceHi', 'relevance_hi') || getString(record, 'relevanceEn', 'relevance_en'),
+          en: getString(record, 'relevanceEn', 'relevance_en') || `${category} current affairs relevance`,
+          hi: getString(record, 'relevanceHi', 'relevance_hi') || getString(record, 'relevanceEn', 'relevance_en') || `${category} current affairs relevance`,
         },
         ...(getString(record, 'staticLinkageEn', 'static_linkage_en') || getString(record, 'staticLinkageHi', 'static_linkage_hi')
           ? {
@@ -175,16 +205,20 @@ const mapRecordToNewsRow = (record: Record<string, string | number>): ParsedNews
 
 export const fetchAnalysisByDateFromGoogleSheet = async (date: string): Promise<DailyNews | null> => {
   const response = await loadGoogleSheet();
-  const headers = response.table?.cols.map(col => normalizeHeader(col.label || '')) ?? [];
+  const { headers, rows: responseRows } = getEffectiveHeaders(response);
 
   if (headers.every(header => !header)) {
     return null;
   }
 
-  const rows = (response.table?.rows ?? [])
+  const rows = responseRows
     .map(row => buildRowRecord(headers, row))
     .map(mapRecordToNewsRow)
     .filter((row): row is ParsedNewsRow => row !== null)
+    .map(row => ({
+      ...row,
+      date: row.date || date,
+    }))
     .filter(row => row.date === date)
     .sort((left, right) => left.sortOrder - right.sortOrder);
 
