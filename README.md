@@ -1,4 +1,4 @@
-# Samachar Sathi
+﻿# Samachar Sathi
 
 ## About
 
@@ -9,6 +9,12 @@ Current affairs and analysis app with daily intelligence flow and local-first re
 - GitHub repo: https://github.com/SnakeEye-sudo/Samachar-Sathi
 - Tags: sathi-family, news-app, current-affairs, education, pwa, hindi-app
 
+<!-- app-screenshot:start -->
+## App Screenshot
+
+![App screenshot](docs/preview.png)
+
+<!-- app-screenshot:end -->
 ## Creator
 
 Built and originally created by **Er. Sangam Krishna** ([SnakeEye-sudo](https://github.com/SnakeEye-sudo)).
@@ -24,3 +30,4 @@ Built and originally created by **Er. Sangam Krishna** ([SnakeEye-sudo](https://
 This repository uses the **MIT License** with a required **NOTICE** file.
 That means collaboration is allowed, but copyright and attribution notices must stay preserved.
 See [LICENSE](LICENSE), [NOTICE](NOTICE), and [CONTRIBUTING.md](CONTRIBUTING.md).
+
