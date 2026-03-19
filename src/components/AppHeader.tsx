@@ -4,6 +4,7 @@ import { signInWithGoogle, logout, onAuthChange, autoSignInFromUrl } from '@/lib
 import { User } from 'firebase/auth';
 import { useTheme } from '@/components/theme-provider';
 import {
+  Menu,
   Search,
   Moon,
   Sun,
@@ -59,9 +60,9 @@ const AppHeader = () => {
   };
 
   const navItems = [
-    { id: 'analysis', icon: BookOpen, label: { hi: 'à¤µà¤¿à¤¶à¥à¤²à¥‡à¤·à¤£', en: 'Analysis' }, path: '/' },
-    { id: 'archive', icon: Calendar, label: { hi: 'à¤…à¤­à¤¿à¤²à¥‡à¤–à¤¾à¤—à¤¾à¤°', en: 'Archive' }, path: '/archive' },
-    { id: 'magazine', icon: Grid, label: { hi: 'à¤ªà¤¤à¥à¤°à¤¿à¤•à¤¾', en: 'Magazine' }, path: '/magazine' },
+    { id: 'analysis', icon: BookOpen, label: { hi: 'विश्लेषण', en: 'Analysis' }, path: '/' },
+    { id: 'archive', icon: Calendar, label: { hi: 'अभिलेखागार', en: 'Archive' }, path: '/archive' },
+    { id: 'magazine', icon: Grid, label: { hi: 'पत्रिका', en: 'Magazine' }, path: '/magazine' },
   ];
 
   return (
@@ -119,7 +120,7 @@ const AppHeader = () => {
             className="px-4 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-2 text-muted-foreground hover:bg-muted/50 hover:text-foreground"
           >
             <BrainCircuit className="w-4 h-4" />
-            <span>{lang === 'hi' ? 'à¤«à¥ˆà¤®à¤¿à¤²à¥€ à¤¹à¤¬' : 'Family Hub'}</span>
+            <span>{lang === 'hi' ? 'फैमिली हब' : 'Family Hub'}</span>
           </a>
         </nav>
 
@@ -127,7 +128,7 @@ const AppHeader = () => {
           <button
             onClick={() => setLang(lang === 'hi' ? 'en' : 'hi')}
             className="w-10 h-10 rounded-full hover:bg-muted flex items-center justify-center transition-colors relative group"
-            title={lang === 'hi' ? 'Switch to English' : 'à¤¹à¤¿à¤‚à¤¦à¥€ à¤®à¥‡à¤‚ à¤¬à¤¦à¤²à¥‡à¤‚'}
+            title={lang === 'hi' ? 'Switch to English' : 'हिंदी में बदलें'}
           >
             <Languages className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" />
             <span className="absolute -bottom-1 -right-1 text-[8px] font-bold bg-accent text-accent-foreground px-1 rounded uppercase">
@@ -163,7 +164,7 @@ const AppHeader = () => {
               className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-colors"
             >
               <UserCircle className="w-5 h-5" />
-              <span className="text-sm font-medium">{lang === 'hi' ? 'à¤¸à¤¾à¤‡à¤¨ à¤‡à¤¨' : 'Sign In'}</span>
+              <span className="text-sm font-medium">{lang === 'hi' ? 'साइन इन' : 'Sign In'}</span>
             </button>
           )}
 
@@ -173,6 +174,10 @@ const AppHeader = () => {
           >
             <Settings className="w-5 h-5" />
           </Link>
+
+          <button className="md:hidden w-10 h-10 rounded-lg bg-muted flex items-center justify-center">
+            <Menu className="w-5 h-5" />
+          </button>
         </div>
       </div>
     </header>
