@@ -117,6 +117,15 @@ const AppHeader = () => {
               </Link>
             );
           })}
+          <a
+            href="https://snakeeye-sudo.github.io/Aapka-Sathi/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-2 text-muted-foreground hover:bg-muted/50 hover:text-foreground"
+          >
+            <BrainCircuit className="w-4 h-4" />
+            <span>{lang === 'hi' ? 'फैमिली हब' : 'Family Hub'}</span>
+          </a>
         </nav>
 
         {/* Actions Section */}
