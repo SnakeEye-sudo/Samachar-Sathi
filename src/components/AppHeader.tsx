@@ -3,14 +3,13 @@ import { useEffect as useAuthEffect, useState as useAuthState } from 'react';
 import { signInWithGoogle, logout, onAuthChange, autoSignInFromUrl } from '@/lib/authService';
 import { User } from 'firebase/auth';
 import { useTheme } from '@/components/theme-provider';
-import { 
-  Menu, 
-  Search, 
-  Moon, 
-  Sun, 
-  BookOpen, 
-  Grid, 
-  BrainCircuit, 
+import {
+  Search,
+  Moon,
+  Sun,
+  BookOpen,
+  Grid,
+  BrainCircuit,
   Calendar,
   Settings,
   Languages,
@@ -26,7 +25,7 @@ const AppHeader = () => {
   const { lang, setLang } = useLanguage();
   const { theme, setTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
-    const [user, setUser] = useAuthState<User | null>(null);
+  const [user, setUser] = useAuthState<User | null>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -35,9 +34,7 @@ const AppHeader = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Auth state listener
   useAuthEffect(() => {
-    // Try cross-app SSO from URL token first (coming from ParikshaSathi)
     autoSignInFromUrl();
     const unsubscribe = onAuthChange((user) => {
       setUser(user);
@@ -45,7 +42,7 @@ const AppHeader = () => {
     return () => unsubscribe();
   }, []);
 
-    const handleSignIn = async () => {
+  const handleSignIn = async () => {
     try {
       await signInWithGoogle();
     } catch (error) {
@@ -62,27 +59,26 @@ const AppHeader = () => {
   };
 
   const navItems = [
-    { id: 'analysis', icon: BookOpen, label: { hi: 'विश्लेषण', en: 'Analysis' }, path: '/' },
-    { id: 'archive', icon: Calendar, label: { hi: 'अभिलेखागार', en: 'Archive' }, path: '/archive' },
-    { id: 'magazine', icon: Grid, label: { hi: 'पत्रिका', en: 'Magazine' }, path: '/magazine' },
+    { id: 'analysis', icon: BookOpen, label: { hi: 'à¤µà¤¿à¤¶à¥à¤²à¥‡à¤·à¤£', en: 'Analysis' }, path: '/' },
+    { id: 'archive', icon: Calendar, label: { hi: 'à¤…à¤­à¤¿à¤²à¥‡à¤–à¤¾à¤—à¤¾à¤°', en: 'Archive' }, path: '/archive' },
+    { id: 'magazine', icon: Grid, label: { hi: 'à¤ªà¤¤à¥à¤°à¤¿à¤•à¤¾', en: 'Magazine' }, path: '/magazine' },
   ];
 
   return (
-    <header 
+    <header
       className={cn(
         "sticky top-0 z-50 transition-all duration-300 px-4 py-3 md:px-8",
-        isScrolled 
-          ? "bg-background/80 backdrop-blur-lg border-b border-border/50 py-2 shadow-sm" 
+        isScrolled
+          ? "bg-background/80 backdrop-blur-lg border-b border-border/50 py-2 shadow-sm"
           : "bg-transparent py-4"
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        {/* Logo Section */}
         <Link to="/" className="group flex items-center gap-3">
           <div className="relative">
-            <img 
+            <img
               src={`${import.meta.env.BASE_URL}logo.png`}
-              alt="Logo" 
+              alt="Logo"
               className="w-12 h-12 rounded-2xl shadow-lg group-hover:scale-105 transition-transform object-cover border border-border"
             />
             <div className="absolute -inset-1 gold-gradient opacity-10 blur-sm rounded-2xl group-hover:opacity-30 transition-opacity" />
@@ -97,18 +93,17 @@ const AppHeader = () => {
           </div>
         </Link>
 
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-1">
           {navItems.map((item) => {
             const isActive = location.pathname === item.path;
             return (
-              <Link 
+              <Link
                 key={item.id}
                 to={item.path}
                 className={cn(
                   "px-4 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-2",
-                  isActive 
-                    ? "bg-accent/10 text-accent" 
+                  isActive
+                    ? "bg-accent/10 text-accent"
                     : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
                 )}
               >
@@ -124,17 +119,15 @@ const AppHeader = () => {
             className="px-4 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-2 text-muted-foreground hover:bg-muted/50 hover:text-foreground"
           >
             <BrainCircuit className="w-4 h-4" />
-            <span>{lang === 'hi' ? 'फैमिली हब' : 'Family Hub'}</span>
+            <span>{lang === 'hi' ? 'à¤«à¥ˆà¤®à¤¿à¤²à¥€ à¤¹à¤¬' : 'Family Hub'}</span>
           </a>
         </nav>
 
-        {/* Actions Section */}
         <div className="flex items-center gap-2">
-          {/* Language Toggle */}
           <button
             onClick={() => setLang(lang === 'hi' ? 'en' : 'hi')}
             className="w-10 h-10 rounded-full hover:bg-muted flex items-center justify-center transition-colors relative group"
-            title={lang === 'hi' ? 'Switch to English' : 'हिंदी में बदलें'}
+            title={lang === 'hi' ? 'Switch to English' : 'à¤¹à¤¿à¤‚à¤¦à¥€ à¤®à¥‡à¤‚ à¤¬à¤¦à¤²à¥‡à¤‚'}
           >
             <Languages className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" />
             <span className="absolute -bottom-1 -right-1 text-[8px] font-bold bg-accent text-accent-foreground px-1 rounded uppercase">
@@ -142,7 +135,6 @@ const AppHeader = () => {
             </span>
           </button>
 
-          {/* Theme Toggle */}
           <button
             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
             className="w-10 h-10 rounded-full hover:bg-muted flex items-center justify-center transition-colors text-muted-foreground hover:text-foreground"
@@ -150,11 +142,10 @@ const AppHeader = () => {
             {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
           </button>
 
-                    {/* User Profile / Sign In */}
           {user ? (
             <div className="flex items-center gap-2">
-              <img 
-                src={user.photoURL || ''} 
+              <img
+                src={user.photoURL || ''}
                 alt={user.displayName || 'User'}
                 className="w-8 h-8 rounded-full border-2 border-primary"
               />
@@ -172,22 +163,16 @@ const AppHeader = () => {
               className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-colors"
             >
               <UserCircle className="w-5 h-5" />
-              <span className="text-sm font-medium">{lang === 'hi' ? 'साइन इन' : 'Sign In'}</span>
+              <span className="text-sm font-medium">{lang === 'hi' ? 'à¤¸à¤¾à¤‡à¤¨ à¤‡à¤¨' : 'Sign In'}</span>
             </button>
           )}
 
-          {/* Admin/Settings */}
           <Link
             to="/admin"
             className="w-10 h-10 rounded-full hover:bg-muted flex items-center justify-center transition-colors text-muted-foreground hover:text-foreground"
           >
             <Settings className="w-5 h-5" />
           </Link>
-
-          {/* Mobile Menu Trigger */}
-          <button className="md:hidden w-10 h-10 rounded-lg bg-muted flex items-center justify-center">
-            <Menu className="w-5 h-5" />
-          </button>
         </div>
       </div>
     </header>
