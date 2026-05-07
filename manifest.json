@@ -1,0 +1,20 @@
+{
+  "name": "SamacharSathi — News Intelligence",
+  "short_name": "SamacharSathi",
+  "description": "Daily news analysis and intelligence for UPSC & competitive exam aspirants.",
+  "start_url": "/Samachar-Sathi/",
+  "scope": "/Samachar-Sathi/",
+  "display": "standalone",
+  "background_color": "#0a0820",
+  "theme_color": "#f59e0b",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "logo.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "logo.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ],
+  "categories": ["education", "news", "productivity"],
+  "lang": "hi",
+  "screenshots": [
+    { "src": "logo.png", "sizes": "512x512", "type": "image/png", "form_factor": "narrow" }
+  ]
+}
