@@ -1,0 +1,779 @@
+{
+  "metadata": {
+    "date": "2026-05-12",
+    "totalArticlesAnalyzed": 32,
+    "generatedAt": "2026-05-12T04:14:01.315Z",
+    "primaryLanguage": "mixed"
+  },
+  "categories": [
+    {
+      "name": "GS-II: Constitution & Polity",
+      "news": [
+        {
+          "title": {
+            "en": "GBA polls: Karnataka SEC appeals to Supreme Court for extension of deadline  by 3 months",
+            "hi": "GBA polls: Karnataka SEC appeals to Supreme Court for extension of deadline  by 3 months"
+          },
+          "link": "https://www.thehindu.com/news/national/karnataka/gba-polls-karnataka-sec-appeals-to-supreme-court-for-extension-of-deadline-by-3-months/article70966472.ece",
+          "source": "The Hindu",
+          "analysis": {
+            "en": "The Karnataka State Election Commission had recently said civic polls in Bengaluru will be held between June 14 and 24.",
+            "hi": "UPSC GS-Segment के तहत विस्तृत विश्लेषण।"
+          },
+          "upscContext": {
+            "relevance": {
+              "en": "Relevant for UPSC Mains GS-II and Prelims.",
+              "hi": "UPSC मुख्य परीक्षा GS-II और प्रारंभिक परीक्षा के लिए महत्वपूर्ण।"
+            },
+            "staticLinkage": {
+              "en": "Link this news with basic static concepts of POLITY",
+              "hi": "इस समाचार को POLITY के बुनियादी वैधानिक अवधारणाओं से जोड़ें।"
+            }
+          }
+        },
+        {
+          "title": {
+            "en": "Will hear Trinamool pleas on victory margins being less than deleted votes in SIR, says Supreme Court",
+            "hi": "Will hear Trinamool pleas on victory margins being less than deleted votes in SIR, says Supreme Court"
+          },
+          "link": "https://www.thehindu.com/news/national/will-hear-trinamool-pleas-on-victory-margins-being-less-than-deleted-votes-in-sir-says-supreme-court/article70965914.ece",
+          "source": "The Hindu",
+          "analysis": {
+            "en": "This is the first Supreme Court hearing in the West Bengal SIR case after the election; in as many as 31 seats, the victory margins of the BJP were less than the number of votes deleted during the SIR, Trinamool leaders say",
+            "hi": "UPSC GS-Segment के तहत विस्तृत विश्लेषण।"
+          },
+          "upscContext": {
+            "relevance": {
+              "en": "Relevant for UPSC Mains GS-II and Prelims.",
+              "hi": "UPSC मुख्य परीक्षा GS-II और प्रारंभिक परीक्षा के लिए महत्वपूर्ण।"
+            },
+            "staticLinkage": {
+              "en": "Link this news with basic static concepts of POLITY",
+              "hi": "इस समाचार को POLITY के बुनियादी वैधानिक अवधारणाओं से जोड़ें।"
+            }
+          }
+        },
+        {
+          "title": {
+            "en": "ECI set to roll out phase III of SIR in ‘coming days’ to cover 22 States, UTs",
+            "hi": "ECI set to roll out phase III of SIR in ‘coming days’ to cover 22 States, UTs"
+          },
+          "link": "https://www.thehindu.com/news/national/eci-set-to-roll-out-phase-iii-of-sir-in-coming-days-to-cover-22-states-uts/article70967203.ece",
+          "source": "The Hindu",
+          "analysis": {
+            "en": "The poll authority had held back the exercise due to Assembly elections in Kerala, Assam, Puducherry, Tamil Nadu and West Bengal held last month",
+            "hi": "UPSC GS-Segment के तहत विस्तृत विश्लेषण।"
+          },
+          "upscContext": {
+            "relevance": {
+              "en": "Relevant for UPSC Mains GS-II and Prelims.",
+              "hi": "UPSC मुख्य परीक्षा GS-II और प्रारंभिक परीक्षा के लिए महत्वपूर्ण।"
+            },
+            "staticLinkage": {
+              "en": "Link this news with basic static concepts of POLITY",
+              "hi": "इस समाचार को POLITY के बुनियादी वैधानिक अवधारणाओं से जोड़ें।"
+            }
+          }
+        },
+        {
+          "title": {
+            "en": "Supreme Court places Sringeri recount result in abeyance; restores Congress leader Raje Gowda as MLA for now",
+            "hi": "Supreme Court places Sringeri recount result in abeyance; restores Congress leader Raje Gowda as MLA for now"
+          },
+          "link": "https://www.thehindu.com/news/national/karnataka/sc-places-sringeri-recount-result-in-abeyance-restores-congress-leader-as-mla-for-now/article70966504.ece",
+          "source": "The Hindu",
+          "analysis": {
+            "en": "A Bench headed by Justice Sanjay Kumar ordered status quo ante while issuing notice to the BJP’s Jeevaraj and other respondents",
+            "hi": "UPSC GS-Segment के तहत विस्तृत विश्लेषण।"
+          },
+          "upscContext": {
+            "relevance": {
+              "en": "Relevant for UPSC Mains GS-II and Prelims.",
+              "hi": "UPSC मुख्य परीक्षा GS-II और प्रारंभिक परीक्षा के लिए महत्वपूर्ण।"
+            },
+            "staticLinkage": {
+              "en": "Link this news with basic static concepts of POLITY",
+              "hi": "इस समाचार को POLITY के बुनियादी वैधानिक अवधारणाओं से जोड़ें।"
+            }
+          }
+        },
+        {
+          "title": {
+            "en": "PM repeats call for saving fuel, cutting gold buy; bats for work from home",
+            "hi": "PM repeats call for saving fuel, cutting gold buy; bats for work from home"
+          },
+          "link": "https://www.thehindu.com/news/national/pm-modi-gujarat-saving-fuel-cutting-gold-west-asia-crisis/article70966937.ece",
+          "source": "The Hindu",
+          "analysis": {
+            "en": "“We must make every effort to reduce the use of imported products and avoid personal activities that involve spending foreign currency,” PM Modi said",
+            "hi": "UPSC GS-Segment के तहत विस्तृत विश्लेषण।"
+          },
+          "upscContext": {
+            "relevance": {
+              "en": "Relevant for UPSC Mains GS-II and Prelims.",
+              "hi": "UPSC मुख्य परीक्षा GS-II और प्रारंभिक परीक्षा के लिए महत्वपूर्ण।"
+            },
+            "staticLinkage": {
+              "en": "Link this news with basic static concepts of POLITY",
+              "hi": "इस समाचार को POLITY के बुनियादी वैधानिक अवधारणाओं से जोड़ें।"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "GS-II: International Relations",
+      "news": [
+        {
+          "title": {
+            "en": "Himanta to be Assam’s first non-Congress CM twice in a row",
+            "hi": "Himanta to be Assam’s first non-Congress CM twice in a row"
+          },
+          "link": "https://www.thehindu.com/news/national/assam/himanta-to-be-assams-first-non-congress-cm-twice-in-a-row/article70966309.ece",
+          "source": "The Hindu",
+          "analysis": {
+            "en": "Apart from Prime Minister Narendra Modi and some Union Ministers, ambassadors of a few countries, industrialists, and religious leaders will attend Tuesday’s oath-taking ceremony",
+            "hi": "UPSC GS-Segment के तहत विस्तृत विश्लेषण।"
+          },
+          "upscContext": {
+            "relevance": {
+              "en": "Relevant for UPSC Mains GS-II and Prelims.",
+              "hi": "UPSC मुख्य परीक्षा GS-II और प्रारंभिक परीक्षा के लिए महत्वपूर्ण।"
+            },
+            "staticLinkage": {
+              "en": "Link this news with basic static concepts of IR",
+              "hi": "इस समाचार को IR के बुनियादी वैधानिक अवधारणाओं से जोड़ें।"
+            }
+          }
+        },
+        {
+          "title": {
+            "en": "From Ukraine to Iran, evacuation crises prompts MEA to push for database of Indian students abroad",
+            "hi": "From Ukraine to Iran, evacuation crises prompts MEA to push for database of Indian students abroad"
+          },
+          "link": "https://indianexpress.com/article/india/mea-makes-a-new-push-for-database-on-students-abroad-10682996/",
+          "source": "Indian Express",
+          "analysis": {
+            "en": "Comprehensive news analysis related to GS-II: International Relations",
+            "hi": "UPSC GS-Segment के तहत विस्तृत विश्लेषण।"
+          },
+          "upscContext": {
+            "relevance": {
+              "en": "Relevant for UPSC Mains GS-II and Prelims.",
+              "hi": "UPSC मुख्य परीक्षा GS-II और प्रारंभिक परीक्षा के लिए महत्वपूर्ण।"
+            },
+            "staticLinkage": {
+              "en": "Link this news with basic static concepts of IR",
+              "hi": "इस समाचार को IR के बुनियादी वैधानिक अवधारणाओं से जोड़ें।"
+            }
+          }
+        },
+        {
+          "title": {
+            "en": "Misri’s proposed Kathmandu visit deferred for now; India invites Nepal for big cat summit",
+            "hi": "Misri’s proposed Kathmandu visit deferred for now; India invites Nepal for big cat summit"
+          },
+          "link": "https://indianexpress.com/article/india/misris-proposed-kathmandu-visit-deferred-for-now-india-invites-nepal-for-big-cat-summit-10681731/",
+          "source": "Indian Express",
+          "analysis": {
+            "en": "Comprehensive news analysis related to GS-II: International Relations",
+            "hi": "UPSC GS-Segment के तहत विस्तृत विश्लेषण।"
+          },
+          "upscContext": {
+            "relevance": {
+              "en": "Relevant for UPSC Mains GS-II and Prelims.",
+              "hi": "UPSC मुख्य परीक्षा GS-II और प्रारंभिक परीक्षा के लिए महत्वपूर्ण।"
+            },
+            "staticLinkage": {
+              "en": "Link this news with basic static concepts of IR",
+              "hi": "इस समाचार को IR के बुनियादी वैधानिक अवधारणाओं से जोड़ें।"
+            }
+          }
+        },
+        {
+          "title": {
+            "en": "From ground to the skies: How drones are reshaping operations along borders",
+            "hi": "From ground to the skies: How drones are reshaping operations along borders"
+          },
+          "link": "https://indianexpress.com/article/india/from-ground-to-the-skies-how-drones-are-reshaping-operations-along-borders-10681619/",
+          "source": "Indian Express",
+          "analysis": {
+            "en": "Comprehensive news analysis related to GS-II: International Relations",
+            "hi": "UPSC GS-Segment के तहत विस्तृत विश्लेषण।"
+          },
+          "upscContext": {
+            "relevance": {
+              "en": "Relevant for UPSC Mains GS-II and Prelims.",
+              "hi": "UPSC मुख्य परीक्षा GS-II और प्रारंभिक परीक्षा के लिए महत्वपूर्ण।"
+            },
+            "staticLinkage": {
+              "en": "Link this news with basic static concepts of IR",
+              "hi": "इस समाचार को IR के बुनियादी वैधानिक अवधारणाओं से जोड़ें।"
+            }
+          }
+        },
+        {
+          "title": {
+            "en": "‘Abducted’ amid attack on village near Myanmar border, Manipur woman freed two days later",
+            "hi": "‘Abducted’ amid attack on village near Myanmar border, Manipur woman freed two days later"
+          },
+          "link": "https://indianexpress.com/article/india/manipur-border-violence-abducted-woman-released-10681308/",
+          "source": "Indian Express",
+          "analysis": {
+            "en": "Comprehensive news analysis related to GS-II: International Relations",
+            "hi": "UPSC GS-Segment के तहत विस्तृत विश्लेषण।"
+          },
+          "upscContext": {
+            "relevance": {
+              "en": "Relevant for UPSC Mains GS-II and Prelims.",
+              "hi": "UPSC मुख्य परीक्षा GS-II और प्रारंभिक परीक्षा के लिए महत्वपूर्ण।"
+            },
+            "staticLinkage": {
+              "en": "Link this news with basic static concepts of IR",
+              "hi": "इस समाचार को IR के बुनियादी वैधानिक अवधारणाओं से जोड़ें।"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "GS-II: Governance & Social Justice",
+      "news": [
+        {
+          "title": {
+            "en": "T.N. CM Vijay orders closure of TASMAC shops located near educational institutions, places of worship",
+            "hi": "T.N. CM Vijay orders closure of TASMAC shops located near educational institutions, places of worship"
+          },
+          "link": "https://www.thehindu.com/news/national/tamil-nadu/tn-cm-vijay-orders-closure-of-tasmac-shops-located-near-educational-institutions-places-of-worship/article70968144.ece",
+          "source": "The Hindu",
+          "analysis": {
+            "en": "Of the 717 shops, 276 are located within 500 metre from various places of worship, 186 near educational institutions and 255 near bus terminuses",
+            "hi": "UPSC GS-Segment के तहत विस्तृत विश्लेषण।"
+          },
+          "upscContext": {
+            "relevance": {
+              "en": "Relevant for UPSC Mains GS-II and Prelims.",
+              "hi": "UPSC मुख्य परीक्षा GS-II और प्रारंभिक परीक्षा के लिए महत्वपूर्ण।"
+            },
+            "staticLinkage": {
+              "en": "Link this news with basic static concepts of IR",
+              "hi": "इस समाचार को IR के बुनियादी वैधानिक अवधारणाओं से जोड़ें।"
+            }
+          }
+        },
+        {
+          "title": {
+            "en": "Trinamool alleges continued post-poll violence in West Bengal",
+            "hi": "Trinamool alleges continued post-poll violence in West Bengal"
+          },
+          "link": "https://www.thehindu.com/news/national/west-bengal/tmcs-abhishek-claims-bjp-backed-miscreants-set-ablaze-10-shops-in-khejuri-bjp-denies-charge/article70965400.ece",
+          "source": "The Hindu",
+          "analysis": {
+            "en": "Abhishek Banerjee alleges statues of tribal leaders Sidhu and Kanhu Murmu have been vandalised in north Bengal",
+            "hi": "UPSC GS-Segment के तहत विस्तृत विश्लेषण।"
+          },
+          "upscContext": {
+            "relevance": {
+              "en": "Relevant for UPSC Mains GS-II and Prelims.",
+              "hi": "UPSC मुख्य परीक्षा GS-II और प्रारंभिक परीक्षा के लिए महत्वपूर्ण।"
+            },
+            "staticLinkage": {
+              "en": "Link this news with basic static concepts of IR",
+              "hi": "इस समाचार को IR के बुनियादी वैधानिक अवधारणाओं से जोड़ें।"
+            }
+          }
+        },
+        {
+          "title": {
+            "en": "Himachal to link DC, SP performance ratings to drug control efforts",
+            "hi": "Himachal to link DC, SP performance ratings to drug control efforts"
+          },
+          "link": "https://www.thehindu.com/news/national/himachal-pradesh/himachal-to-link-dc-sp-performance-ratings-to-drug-control-efforts/article70966127.ece",
+          "source": "The Hindu",
+          "analysis": {
+            "en": "Himachal Pradesh Chief Minister Sukhvinder Singh Sukhu said administrative and police officers will visit at least ten educational institutions in their respective areas to create awareness among students about the ill-effects of drugs",
+            "hi": "UPSC GS-Segment के तहत विस्तृत विश्लेषण।"
+          },
+          "upscContext": {
+            "relevance": {
+              "en": "Relevant for UPSC Mains GS-II and Prelims.",
+              "hi": "UPSC मुख्य परीक्षा GS-II और प्रारंभिक परीक्षा के लिए महत्वपूर्ण।"
+            },
+            "staticLinkage": {
+              "en": "Link this news with basic static concepts of IR",
+              "hi": "इस समाचार को IR के बुनियादी वैधानिक अवधारणाओं से जोड़ें।"
+            }
+          }
+        },
+        {
+          "title": {
+            "en": "Education Budget will grow every year, says Telangana CM Revanth Reddy",
+            "hi": "Education Budget will grow every year, says Telangana CM Revanth Reddy"
+          },
+          "link": "https://www.thehindu.com/news/national/telangana/education-budget-will-grow-every-year-says-telangana-cm-revanth-reddy/article70966847.ece",
+          "source": "The Hindu",
+          "analysis": {
+            "en": "Allocations to the sector would be gradually increased to 15% of the annual Budget, says Reddy, also the Education Minister, while launching the ‘Exclusive Education Week’ celebrations in Hyderabad; also unveils ₹1,700-crore infrastructure works for integrated school complexes, additional classrooms and pre-primary sections in government schools",
+            "hi": "UPSC GS-Segment के तहत विस्तृत विश्लेषण।"
+          },
+          "upscContext": {
+            "relevance": {
+              "en": "Relevant for UPSC Mains GS-II and Prelims.",
+              "hi": "UPSC मुख्य परीक्षा GS-II और प्रारंभिक परीक्षा के लिए महत्वपूर्ण।"
+            },
+            "staticLinkage": {
+              "en": "Link this news with basic static concepts of IR",
+              "hi": "इस समाचार को IR के बुनियादी वैधानिक अवधारणाओं से जोड़ें।"
+            }
+          }
+        },
+        {
+          "title": {
+            "en": "PM Modi on Patna dais, 32 ministers join Samrat govt, Nitish son gets Health",
+            "hi": "PM Modi on Patna dais, 32 ministers join Samrat govt, Nitish son gets Health"
+          },
+          "link": "https://indianexpress.com/article/india/bihar-cabinet-samrat-choudhary-nitish-kumar-son-minister-10677606/",
+          "source": "Indian Express",
+          "analysis": {
+            "en": "Comprehensive news analysis related to GS-II: Governance & Social Justice",
+            "hi": "UPSC GS-Segment के तहत विस्तृत विश्लेषण।"
+          },
+          "upscContext": {
+            "relevance": {
+              "en": "Relevant for UPSC Mains GS-II and Prelims.",
+              "hi": "UPSC मुख्य परीक्षा GS-II और प्रारंभिक परीक्षा के लिए महत्वपूर्ण।"
+            },
+            "staticLinkage": {
+              "en": "Link this news with basic static concepts of IR",
+              "hi": "इस समाचार को IR के बुनियादी वैधानिक अवधारणाओं से जोड़ें।"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "GS-III: Economy",
+      "news": [
+        {
+          "title": {
+            "en": "TCS Nashik case: NCW flags ‘toxic work culture’, ‘zero POSH compliance’",
+            "hi": "TCS Nashik case: NCW flags ‘toxic work culture’, ‘zero POSH compliance’"
+          },
+          "link": "https://www.thehindu.com/news/national/tcs-nashik-case-ncw-flags-toxic-work-culture-zero-posh-compliance/article70966426.ece",
+          "source": "The Hindu",
+          "analysis": {
+            "en": "Deeply disturbing and toxic workplace environment marked by pervasive sexual harassment and abuse of authority at the workplace, says NCW report.",
+            "hi": "UPSC GS-Segment के तहत विस्तृत विश्लेषण।"
+          },
+          "upscContext": {
+            "relevance": {
+              "en": "Relevant for UPSC Mains GS-III and Prelims.",
+              "hi": "UPSC मुख्य परीक्षा GS-III और प्रारंभिक परीक्षा के लिए महत्वपूर्ण।"
+            },
+            "staticLinkage": {
+              "en": "Link this news with basic static concepts of ECONOMY",
+              "hi": "इस समाचार को ECONOMY के बुनियादी वैधानिक अवधारणाओं से जोड़ें।"
+            }
+          }
+        },
+        {
+          "title": {
+            "en": "ED alleges Punjab minister Sanjeev Arora used bogus invoices for GST refunds",
+            "hi": "ED alleges Punjab minister Sanjeev Arora used bogus invoices for GST refunds"
+          },
+          "link": "https://indianexpress.com/article/india/ed-alleges-punjab-minister-sanjeev-arora-used-bogus-invoices-for-gst-refunds-10682003/",
+          "source": "Indian Express",
+          "analysis": {
+            "en": "Comprehensive news analysis related to GS-III: Economy",
+            "hi": "UPSC GS-Segment के तहत विस्तृत विश्लेषण।"
+          },
+          "upscContext": {
+            "relevance": {
+              "en": "Relevant for UPSC Mains GS-III and Prelims.",
+              "hi": "UPSC मुख्य परीक्षा GS-III और प्रारंभिक परीक्षा के लिए महत्वपूर्ण।"
+            },
+            "staticLinkage": {
+              "en": "Link this news with basic static concepts of ECONOMY",
+              "hi": "इस समाचार को ECONOMY के बुनियादी वैधानिक अवधारणाओं से जोड़ें।"
+            }
+          }
+        },
+        {
+          "title": {
+            "en": "Fugitive gangster makes ‘extortion’ allegations against Jharkhand IPS officer, BJP seeks probe",
+            "hi": "Fugitive gangster makes ‘extortion’ allegations against Jharkhand IPS officer, BJP seeks probe"
+          },
+          "link": "https://indianexpress.com/article/india/prince-khan-video-row-jharkhand-ips-officer-bjp-jmm-10679542/",
+          "source": "Indian Express",
+          "analysis": {
+            "en": "Comprehensive news analysis related to GS-III: Economy",
+            "hi": "UPSC GS-Segment के तहत विस्तृत विश्लेषण।"
+          },
+          "upscContext": {
+            "relevance": {
+              "en": "Relevant for UPSC Mains GS-III and Prelims.",
+              "hi": "UPSC मुख्य परीक्षा GS-III और प्रारंभिक परीक्षा के लिए महत्वपूर्ण।"
+            },
+            "staticLinkage": {
+              "en": "Link this news with basic static concepts of ECONOMY",
+              "hi": "इस समाचार को ECONOMY के बुनियादी वैधानिक अवधारणाओं से जोड़ें।"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "GS-III: Science & Tech",
+      "news": [
+        {
+          "title": {
+            "en": "Tamil Nadu politics LIVE: Ahead of crucial floor test, split wide open in AIADMK",
+            "hi": "Tamil Nadu politics LIVE: Ahead of crucial floor test, split wide open in AIADMK"
+          },
+          "link": "https://www.thehindu.com/news/national/tamil-nadu/tamil-nadu-assembly-floor-test-aiadmk-party-split-palaniswami-velumani-live-updates-may-12-2026/article70968227.ece",
+          "source": "The Hindu",
+          "analysis": {
+            "en": "As per media reports,  Edappadi K Palaniswami has got the backing of 17 of the 47 MLAs belonging to the AIADMK, though a member of the Palaniswami camp claimed it was 24",
+            "hi": "UPSC GS-Segment के तहत विस्तृत विश्लेषण।"
+          },
+          "upscContext": {
+            "relevance": {
+              "en": "Relevant for UPSC Mains GS-III and Prelims.",
+              "hi": "UPSC मुख्य परीक्षा GS-III और प्रारंभिक परीक्षा के लिए महत्वपूर्ण।"
+            },
+            "staticLinkage": {
+              "en": "Link this news with basic static concepts of SCIENCE",
+              "hi": "इस समाचार को SCIENCE के बुनियादी वैधानिक अवधारणाओं से जोड़ें।"
+            }
+          }
+        },
+        {
+          "title": {
+            "en": "Karnataka staring at monsoon deficit in all but five districts, says Chief Minister",
+            "hi": "Karnataka staring at monsoon deficit in all but five districts, says Chief Minister"
+          },
+          "link": "https://www.thehindu.com/news/national/karnataka/karnataka-staring-at-monsoon-deficit-in-all-but-five-districts-says-chief-minister/article70869693.ece",
+          "source": "The Hindu",
+          "analysis": {
+            "en": "Onus of ensuring drinking water supply is on Deputy Commissioners, says Siddaramaiah",
+            "hi": "UPSC GS-Segment के तहत विस्तृत विश्लेषण।"
+          },
+          "upscContext": {
+            "relevance": {
+              "en": "Relevant for UPSC Mains GS-III and Prelims.",
+              "hi": "UPSC मुख्य परीक्षा GS-III और प्रारंभिक परीक्षा के लिए महत्वपूर्ण।"
+            },
+            "staticLinkage": {
+              "en": "Link this news with basic static concepts of SCIENCE",
+              "hi": "इस समाचार को SCIENCE के बुनियादी वैधानिक अवधारणाओं से जोड़ें।"
+            }
+          }
+        },
+        {
+          "title": {
+            "en": "Karnataka: Deficit pre-monsoon rainfall in 11 districts",
+            "hi": "Karnataka: Deficit pre-monsoon rainfall in 11 districts"
+          },
+          "link": "https://www.thehindu.com/news/national/karnataka/karnataka-deficit-pre-monsoon-rainfall-in-11-districts/article70966119.ece",
+          "source": "The Hindu",
+          "analysis": {
+            "en": "Sixteen districts — Bengaluru Rural, Chickballapur, Kolar, Dakshina Kannada, Udupi, Chikkamagaluru, Shivamogga, Uttara Kannada, Haveri, Ballari, Koppal, Bagalkot, Belagavi, Vijayapura, Yadgir, and Bidar — received normal rainfall",
+            "hi": "UPSC GS-Segment के तहत विस्तृत विश्लेषण।"
+          },
+          "upscContext": {
+            "relevance": {
+              "en": "Relevant for UPSC Mains GS-III and Prelims.",
+              "hi": "UPSC मुख्य परीक्षा GS-III और प्रारंभिक परीक्षा के लिए महत्वपूर्ण।"
+            },
+            "staticLinkage": {
+              "en": "Link this news with basic static concepts of SCIENCE",
+              "hi": "इस समाचार को SCIENCE के बुनियादी वैधानिक अवधारणाओं से जोड़ें।"
+            }
+          }
+        },
+        {
+          "title": {
+            "en": "Kerala Assembly polls 2026: AICC summons top leaders to Delhi to finalise party’s choice of Chief Minister",
+            "hi": "Kerala Assembly polls 2026: AICC summons top leaders to Delhi to finalise party’s choice of Chief Minister"
+          },
+          "link": "https://www.thehindu.com/news/national/kerala/kerala-assembly-polls-2026-aicc-summons-top-leaders-to-delhi-to-finalise-partys-choice-of-chief-minister/article70966097.ece",
+          "source": "The Hindu",
+          "analysis": {
+            "en": "Those attending the crucial meeting with the party’s high command include former KPCC presidents K. Sudhakaran, Mullappally Ramachandran, V.M. Sudheeran and K. Muraleedharan",
+            "hi": "UPSC GS-Segment के तहत विस्तृत विश्लेषण।"
+          },
+          "upscContext": {
+            "relevance": {
+              "en": "Relevant for UPSC Mains GS-III and Prelims.",
+              "hi": "UPSC मुख्य परीक्षा GS-III और प्रारंभिक परीक्षा के लिए महत्वपूर्ण।"
+            },
+            "staticLinkage": {
+              "en": "Link this news with basic static concepts of SCIENCE",
+              "hi": "इस समाचार को SCIENCE के बुनियादी वैधानिक अवधारणाओं से जोड़ें।"
+            }
+          }
+        },
+        {
+          "title": {
+            "en": "AI, GIS-enabled Kartavya-KAAMS app launched for attendance of school teachers, staff",
+            "hi": "AI, GIS-enabled Kartavya-KAAMS app launched for attendance of school teachers, staff"
+          },
+          "link": "https://www.thehindu.com/news/national/karnataka/government-launches-ai-and-gis-enabled-kartavya-kaams-mobile-app-for-school-teachers-and-staff-attendance/article70928637.ece",
+          "source": "The Hindu",
+          "analysis": {
+            "en": "It is mandatory for teaching and non-teaching staff to register attendance twice a day on the app from the place where they are on duty from the academic year 2026-27",
+            "hi": "UPSC GS-Segment के तहत विस्तृत विश्लेषण।"
+          },
+          "upscContext": {
+            "relevance": {
+              "en": "Relevant for UPSC Mains GS-III and Prelims.",
+              "hi": "UPSC मुख्य परीक्षा GS-III और प्रारंभिक परीक्षा के लिए महत्वपूर्ण।"
+            },
+            "staticLinkage": {
+              "en": "Link this news with basic static concepts of SCIENCE",
+              "hi": "इस समाचार को SCIENCE के बुनियादी वैधानिक अवधारणाओं से जोड़ें।"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "GS-III: Environment & Disaster Mgmt",
+      "news": [
+        {
+          "title": {
+            "en": "Wild gaur caught, released into Tholpetty Wildlife sanctuary",
+            "hi": "Wild gaur caught, released into Tholpetty Wildlife sanctuary"
+          },
+          "link": "https://www.thehindu.com/news/national/kerala/wild-gaur-captured-from-kannur-released-into-tholpetty-wayanad-sanctuary/article70965372.ece",
+          "source": "The Hindu",
+          "analysis": {
+            "en": "Comprehensive news analysis related to GS-III: Environment & Disaster Mgmt",
+            "hi": "UPSC GS-Segment के तहत विस्तृत विश्लेषण।"
+          },
+          "upscContext": {
+            "relevance": {
+              "en": "Relevant for UPSC Mains GS-III and Prelims.",
+              "hi": "UPSC मुख्य परीक्षा GS-III और प्रारंभिक परीक्षा के लिए महत्वपूर्ण।"
+            },
+            "staticLinkage": {
+              "en": "Link this news with basic static concepts of ENVIRONMENT",
+              "hi": "इस समाचार को ENVIRONMENT के बुनियादी वैधानिक अवधारणाओं से जोड़ें।"
+            }
+          }
+        },
+        {
+          "title": {
+            "en": "Operation Sindoor, a year later | Winnie the Pooh toy to a plastic gun: A 6-year-old’s search for ‘safety’ along LoC",
+            "hi": "Operation Sindoor, a year later | Winnie the Pooh toy to a plastic gun: A 6-year-old’s search for ‘safety’ along LoC"
+          },
+          "link": "https://indianexpress.com/article/india/operation-sindoor-a-year-later-winnie-the-pooh-toy-to-a-plastic-gun-a-6-year-olds-search-for-safety-along-loc-10678406/",
+          "source": "Indian Express",
+          "analysis": {
+            "en": "Comprehensive news analysis related to GS-III: Environment & Disaster Mgmt",
+            "hi": "UPSC GS-Segment के तहत विस्तृत विश्लेषण।"
+          },
+          "upscContext": {
+            "relevance": {
+              "en": "Relevant for UPSC Mains GS-III and Prelims.",
+              "hi": "UPSC मुख्य परीक्षा GS-III और प्रारंभिक परीक्षा के लिए महत्वपूर्ण।"
+            },
+            "staticLinkage": {
+              "en": "Link this news with basic static concepts of ENVIRONMENT",
+              "hi": "इस समाचार को ENVIRONMENT के बुनियादी वैधानिक अवधारणाओं से जोड़ें।"
+            }
+          }
+        },
+        {
+          "title": {
+            "en": "El Niño threat: South Asia braces for below-average monsoon in 2026, says climate forum",
+            "hi": "El Niño threat: South Asia braces for below-average monsoon in 2026, says climate forum"
+          },
+          "link": "https://indianexpress.com/article/india/southwest-monsoon-2026-forecast-below-normal-rainfall-10675378/",
+          "source": "Indian Express",
+          "analysis": {
+            "en": "Comprehensive news analysis related to GS-III: Environment & Disaster Mgmt",
+            "hi": "UPSC GS-Segment के तहत विस्तृत विश्लेषण।"
+          },
+          "upscContext": {
+            "relevance": {
+              "en": "Relevant for UPSC Mains GS-III and Prelims.",
+              "hi": "UPSC मुख्य परीक्षा GS-III और प्रारंभिक परीक्षा के लिए महत्वपूर्ण।"
+            },
+            "staticLinkage": {
+              "en": "Link this news with basic static concepts of ENVIRONMENT",
+              "hi": "इस समाचार को ENVIRONMENT के बुनियादी वैधानिक अवधारणाओं से जोड़ें।"
+            }
+          }
+        },
+        {
+          "title": {
+            "en": "Antarctica is melting from below and scientists say it’s worse than expected",
+            "hi": "Antarctica is melting from below and scientists say it’s worse than expected"
+          },
+          "link": "https://www.sciencedaily.com/releases/2026/05/260509210637.htm",
+          "source": "ScienceDaily",
+          "analysis": {
+            "en": "Scientists have uncovered a hidden Antarctic threat that could accelerate global sea level rise far faster than expected. Deep beneath floating ice shelves, long channels carved into the ice appear to trap warmer ocean water, dramatically speeding up melting from below. Even regions of East Antarctica once considered relatively stable may be far more vulnerable than scientists realized. Researchers warn that current climate models may be missing this dangerous process entirely, meaning future sea level rise could be underestimated.",
+            "hi": "UPSC GS-Segment के तहत विस्तृत विश्लेषण।"
+          },
+          "upscContext": {
+            "relevance": {
+              "en": "Relevant for UPSC Mains GS-III and Prelims.",
+              "hi": "UPSC मुख्य परीक्षा GS-III और प्रारंभिक परीक्षा के लिए महत्वपूर्ण।"
+            },
+            "staticLinkage": {
+              "en": "Link this news with basic static concepts of ENVIRONMENT",
+              "hi": "इस समाचार को ENVIRONMENT के बुनियादी वैधानिक अवधारणाओं से जोड़ें।"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "GS-III: Internal Security",
+      "news": [
+        {
+          "title": {
+            "en": "The hidden atomic gap that could break next-generation computer chips",
+            "hi": "The hidden atomic gap that could break next-generation computer chips"
+          },
+          "link": "https://www.sciencedaily.com/releases/2026/05/260508003125.htm",
+          "source": "ScienceDaily",
+          "analysis": {
+            "en": "A major obstacle may be standing in the way of the next generation of ultra-tiny computer chips. Researchers discovered that many promising 2D materials lose their advantages because an invisible atomic-scale gap forms when they are combined with insulating layers. That tiny gap weakens electronic performance and could prevent further miniaturization. The team says new “zipper materials” that lock together more tightly may offer a path forward.",
+            "hi": "UPSC GS-Segment के तहत विस्तृत विश्लेषण।"
+          },
+          "upscContext": {
+            "relevance": {
+              "en": "Relevant for UPSC Mains GS-III and Prelims.",
+              "hi": "UPSC मुख्य परीक्षा GS-III और प्रारंभिक परीक्षा के लिए महत्वपूर्ण।"
+            },
+            "staticLinkage": {
+              "en": "Link this news with basic static concepts of SECURITY",
+              "hi": "इस समाचार को SECURITY के बुनियादी वैधानिक अवधारणाओं से जोड़ें।"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "GS-I: History & Art Culture",
+      "news": []
+    },
+    {
+      "name": "GS-I: Geography",
+      "news": [
+        {
+          "title": {
+            "en": "Indian Ocean more contested, and important than ever before: Vice Admiral Swaminathan",
+            "hi": "Indian Ocean more contested, and important than ever before: Vice Admiral Swaminathan"
+          },
+          "link": "https://www.thehindu.com/news/national/indian-ocean-more-contested-and-important-than-ever-before-vice-admiral-swaminathan/article70966956.ece",
+          "source": "The Hindu",
+          "analysis": {
+            "en": "He observed that the Indian Ocean has always been India’s arena, and highlighted the growing significance of the region",
+            "hi": "UPSC GS-Segment के तहत विस्तृत विश्लेषण।"
+          },
+          "upscContext": {
+            "relevance": {
+              "en": "Relevant for UPSC Mains GS-I and Prelims.",
+              "hi": "UPSC मुख्य परीक्षा GS-I और प्रारंभिक परीक्षा के लिए महत्वपूर्ण।"
+            },
+            "staticLinkage": {
+              "en": "Link this news with basic static concepts of GEOGRAPHY",
+              "hi": "इस समाचार को GEOGRAPHY के बुनियादी वैधानिक अवधारणाओं से जोड़ें।"
+            }
+          }
+        },
+        {
+          "title": {
+            "en": "Monsoon 2026 update: IMD predicts ‘timely’ May 20 arrival in Andaman Sea",
+            "hi": "Monsoon 2026 update: IMD predicts ‘timely’ May 20 arrival in Andaman Sea"
+          },
+          "link": "https://indianexpress.com/article/india/southwest-monsoon-onset-andaman-sea-imd-forecast-10678938/",
+          "source": "Indian Express",
+          "analysis": {
+            "en": "Comprehensive news analysis related to GS-I: Geography",
+            "hi": "UPSC GS-Segment के तहत विस्तृत विश्लेषण।"
+          },
+          "upscContext": {
+            "relevance": {
+              "en": "Relevant for UPSC Mains GS-I and Prelims.",
+              "hi": "UPSC मुख्य परीक्षा GS-I और प्रारंभिक परीक्षा के लिए महत्वपूर्ण।"
+            },
+            "staticLinkage": {
+              "en": "Link this news with basic static concepts of GEOGRAPHY",
+              "hi": "इस समाचार को GEOGRAPHY के बुनियादी वैधानिक अवधारणाओं से जोड़ें।"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "GS-I: Society",
+      "news": [
+        {
+          "title": {
+            "en": "Rajasthan BJP chief apologises after MLA Balaknath’s ‘casteist’ remarks spark backlash",
+            "hi": "Rajasthan BJP chief apologises after MLA Balaknath’s ‘casteist’ remarks spark backlash"
+          },
+          "link": "https://indianexpress.com/article/india/rajasthan-bjp-chief-rathore-apology-mahant-balaknath-casteist-remarks-saini-10676404/",
+          "source": "Indian Express",
+          "analysis": {
+            "en": "Comprehensive news analysis related to GS-I: Society",
+            "hi": "UPSC GS-Segment के तहत विस्तृत विश्लेषण।"
+          },
+          "upscContext": {
+            "relevance": {
+              "en": "Relevant for UPSC Mains GS-I and Prelims.",
+              "hi": "UPSC मुख्य परीक्षा GS-I और प्रारंभिक परीक्षा के लिए महत्वपूर्ण।"
+            },
+            "staticLinkage": {
+              "en": "Link this news with basic static concepts of SOCIETY",
+              "hi": "इस समाचार को SOCIETY के बुनियादी वैधानिक अवधारणाओं से जोड़ें।"
+            }
+          }
+        },
+        {
+          "title": {
+            "en": "Two years after sacking, Uttarakhand brings back principal accused of caste harassment",
+            "hi": "Two years after sacking, Uttarakhand brings back principal accused of caste harassment"
+          },
+          "link": "https://indianexpress.com/article/india/two-years-after-sacking-uttarakhand-brings-back-principal-accused-of-caste-harassment-10669738/",
+          "source": "Indian Express",
+          "analysis": {
+            "en": "Comprehensive news analysis related to GS-I: Society",
+            "hi": "UPSC GS-Segment के तहत विस्तृत विश्लेषण।"
+          },
+          "upscContext": {
+            "relevance": {
+              "en": "Relevant for UPSC Mains GS-I and Prelims.",
+              "hi": "UPSC मुख्य परीक्षा GS-I और प्रारंभिक परीक्षा के लिए महत्वपूर्ण।"
+            },
+            "staticLinkage": {
+              "en": "Link this news with basic static concepts of SOCIETY",
+              "hi": "इस समाचार को SOCIETY के बुनियादी वैधानिक अवधारणाओं से जोड़ें।"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "GS-IV: Ethics & Integrity",
+      "news": []
+    },
+    {
+      "name": "Economics Optional Segment",
+      "news": []
+    },
+    {
+      "name": "Geography Optional Segment",
+      "news": []
+    },
+    {
+      "name": "PSIR Optional Segment",
+      "news": []
+    }
+  ]
+}
